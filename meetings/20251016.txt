@@ -1,0 +1,29 @@
+TASK 1
+
+Submit your Description document on Monday.
+
+
+TASK 2
+
+Install the Poly/ML 5.9.1 compiler onto your laptop:
+
+https://github.com/polyml/polyml/releases/tag/v5.9.1
+
+and figure out how you can use it.
+
+TASK 3
+
+Read Gilmore's Standard ML tutorial:
+
+https://www.lfcs.inf.ed.ac.uk/reports/97/ECS-LFCS-97-364/ECS-LFCS-97-364.pdf
+
+Read the first two chapter, and try to solve the exercises.
+If you encounter any problem, write me an e-mail
+
+TASK 4
+
+Please create a private Github repository and share it with me, using
+my university e-mail address: g.buday@sheffield.ac.uk
+
+Create a good directory structure there and upload your exercise solutions there always,
+don't send me code by attachment. Send me github links.
