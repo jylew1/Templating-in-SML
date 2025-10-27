@@ -8,3 +8,15 @@ in the extended version of Gilmore's tutorial, uploaded to
 https://github.com/jylew1/Templating-in-SML/blob/main/literature/GilmoreProgrammingInStandardML97IncludingFunctors.pdf
 
 in your repository.
+
+If you want to use library functions in ML, you need to understand signatures and structures.
+
+TASK 2
+
+Please start writing your Interim Report. This should be mostly a literature review on template systems,
+especially on Mustache, and look if there are template systems implemented in functional languages.
+If a simple Internet search does not reveal it, dare use generative artificial intelligence to find these.
+But: double-check the hits if they really exist. Also do not include AI generated text into your report.
+
+Please look after literature if you have something more semantical with the same goal as templates, like
+meta programming or macros.
