@@ -20,3 +20,9 @@ But: double-check the hits if they really exist. Also do not include AI generate
 
 Please look after literature if you have something more semantical with the same goal as templates, like
 meta programming or macros.
+
+Also write a short section about your experience with Standard ML. Be honest, mention if you had problems
+or you did not like it as a tool. In academic work, we always evaluate a tool whether it fits the purpose.
+
+Do not worry if in the beginning your text won't be perfect or self-containing, you will have time to refine it.
+The important thing is that you start writing it. Also if I will send you many comments, do not be afraid of them, they are to improve your work, not to judge it as a bad piece of work.
