@@ -1,3 +1,5 @@
+My task: look at the zeller function.
+
 TASK 1
 
 Please read Chapter 9 Introducing Standard ML Modules
