@@ -1,0 +1,10 @@
+TASK 1
+
+Please read Chapter 9 Introducing Standard ML Modules
+ans Chapter 10 Functors, generativity and sharing
+
+in the extended version of Gilmore's tutorial, uploaded to
+
+literature/GilmoreProgrammingInStandardML97IncludingFunctors.pdf
+
+in your repository.
