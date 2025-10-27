@@ -5,6 +5,6 @@ ans Chapter 10 Functors, generativity and sharing
 
 in the extended version of Gilmore's tutorial, uploaded to
 
-literature/GilmoreProgrammingInStandardML97IncludingFunctors.pdf
+https://github.com/jylew1/Templating-in-SML/blob/main/literature/GilmoreProgrammingInStandardML97IncludingFunctors.pdf
 
 in your repository.
