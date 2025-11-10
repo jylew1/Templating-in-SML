@@ -1,0 +1,47 @@
+Dear Ja Ying,
+
+reading your draft I have encountered the following problems:
+
+On the title page, I am not Dr. (yet).
+
+Also, my name's spelling is Gergely.
+
+---
+
+Section 1. Background to Project
+
+Please explain in the beginning what kind of markup do you aim for. Is that HTML? Be concrete.
+
+---
+
+Section 3. Literature Review and Work Progress to Date
+
+I think it would be better to have separate sections for these, especially because 
+it's better to have one-line headings.
+
+---
+
+Literature Review: in your e-mail you did mention references, please insert them into 
+the document. If you need help on how to create a .bib file and use it, ask questions.
+
+I now see some superscript references, but I cannot click on them, and I do not see 
+a References section at the end. Please create one.
+
+---
+
+A simple example of Mustache input and output would be nice.
+
+---
+
+Gantt chart: what do you want to use for that? In LaTeX, there's a Gantt chart package:
+
+https://mirror.ox.ac.uk/sites/ctan.org/graphics/pgf/contrib/pgfgantt/pgfgantt-doc.pdf
+
+---
+
+In section 5. Self-Review you mention that you do not have the CS background. That might
+be true but this project is to help you learn it. Dare ask "stupid" questions from me.
+
+Yours
+
+- Gergely
