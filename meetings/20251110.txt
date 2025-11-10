@@ -1,0 +1,15 @@
+TASK 1
+
+Please make references working, including the References section at the end.
+
+For Harvard-style referencing, here is a LaTeX package for it:
+
+https://ctan.org/tex-archive/macros/latex/contrib/harvard/
+
+Please look at your institution's guidelines for your interim report:
+which citation style shall you use. If it's not written, ask somebody from 
+Administration.
+
+TASK 2
+
+Write more into your Interim Report
