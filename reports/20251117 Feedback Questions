@@ -6,7 +6,7 @@ Figure 1.1 is unreadable, even if I magnify it very much. When showing
 examples, use small ones, and please use some LaTeX environment like minted for
 code snippets, not screenshots.
 --> i did not look into this too deeply but the examples i found on a google images are not the mustache code i desired. I want to show its markup and tags. **But i dont really have a .json to produce something. Can you guide me on this?
-
+--> minted environment 
 Then you write this in bold:
 
 "Despite broad implementation coverage..."
@@ -25,7 +25,8 @@ https://www.cs.cmu.edu/~crary/cmtool/
 
 You can reference this in your work. Also, you might use this parsing tool in your work.
 You should mention that Standard ML is good at parsing, citing this tool. --> I am aiming on using SML would you recommend more background research in my literature report on this
-
+standard ml --> mustache --> python 
+what are the templating language that support python
 Third, you mentioned that Mustache does not work well, only up to 70%. This is really a 
 research gap, you should mention this in the introduction, with a proper reference. --> working on this a bit more! but this particular figure is based on my own experience. **
 
