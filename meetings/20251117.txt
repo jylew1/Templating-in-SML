@@ -1,0 +1,54 @@
+Reading your Interim Report, I have the following observations:
+
+My name on the title page is still with a bad spelling, please use the correct
+spelling Gergely. This is not a personal issue but of having an eye to the
+details being correct.
+
+Section 1 Background to the Project:
+
+Figure 1.1 is unreadable, even if I magnify it very much. When showing
+examples, use small ones, and please use some LaTeX environment like minted for
+code snippets, not screenshots.
+
+Then you write this in bold:
+
+"Despite broad implementation coverage..."
+
+Three things. First, is this a subsection header? Avoid bold otherwise.
+
+Second, I guess broad implementation coverage for Mustache means that it covers many
+_target_ language, not implementation language. As our project uses SML as an implementation
+language, there's a question on what target language do you aim? You can use SML itself,
+but also some more popular language. SML in general is good at handling programming languages,I have just noticed a tool that is implemented in Standard ML but targets other functional 
+languages as well, Haskell and OCaml:
+
+https://www.cs.cmu.edu/~crary/cmtool/
+
+"CM-Lex and CM-Yacc are implemented for Standard ML, OCaml, and Haskell. However, all three versions are implemented _in_ Standard ML."
+
+You can reference this in your work. Also, you might use this parsing tool in your work.
+You should mention that Standard ML is good at parsing, citing this tool.
+
+Third, you mentioned that Mustache does not work well, only up to 70%. This is really a 
+research gap, you should mention this in the introduction, with a proper reference.
+
+Section 2 Introduction...
+
+You mention some advantages of Standard ML here, but I do encourage you to mention
+that it is good at parsing. Reference this book:
+
+https://www.cambridge.org/core/books/modern-compiler-implementation-in-ml/C2A59C37468AA8AAD0ADDCE080E3CB5D
+
+Your aim should be: to demonstrate that a strongly typed functional language is a good
+implementation language for a templating system, and you aim to create a system that
+outbeats Mustache. Of course, at the end you should evaluate your software honestly,
+whether you achieved this.
+
+Section 4 Literature Review:
+
+As I sent you this ChatGPT answer:
+
+https://chatgpt.com/share/6914c21a-f8f8-8004-b19b-0acf2242e1d2
+
+It includes templating engines Nunjucks, Handlebars (a direct evolution of Mustache), Jinja2,  EJS (Embedded JavaScript Templates), React/JSX, Svelte, Django Templates, Cottle/Razor/Scriban, TextX/ERB, ETA, Clojure Hiccup. Please find if this AI-generated list contains valid
+software and reference them, writing a few sentences about each.
