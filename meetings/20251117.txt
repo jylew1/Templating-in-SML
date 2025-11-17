@@ -52,3 +52,20 @@ https://chatgpt.com/share/6914c21a-f8f8-8004-b19b-0acf2242e1d2
 
 It includes templating engines Nunjucks, Handlebars (a direct evolution of Mustache), Jinja2,  EJS (Embedded JavaScript Templates), React/JSX, Svelte, Django Templates, Cottle/Razor/Scriban, TextX/ERB, ETA, Clojure Hiccup. Please find if this AI-generated list contains valid
 software and reference them, writing a few sentences about each.
+
+---
+
+The minted package for code snippets in LaTeX:
+
+https://tug.ctan.org/macros/latex/contrib/minted/minted.pdf
+
+TASK 1
+
+Please follow my above instructions and the ones I sent in e-mail.
+
+Write a few sentences about each Mustache alternatives.
+
+Include the reference on Mustache producing 70% correct output only.
+
+Write down that you picked Python as a target language. Look at templating systems,
+which do support Python.
