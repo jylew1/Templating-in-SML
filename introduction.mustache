@@ -1,0 +1,11 @@
+''' csharp
+using {{packageName}}.{{modelPackage}};
+using System; 
+{{^composedSchemas.oneOf}}
+{{#vars}}{{#isDecimal}}{{^required}}{{dataType}}? {{nameInCamelCase}} = "example {{nameInCamelCase}}"; {{/required}} {{#required}}{{dataType}} {{nameInCamelCase}} = "example {{nameInCamelCase}}"; 
+{{/required}}{{/isDecimal}}{{#isNumber}}{{^required}}{{dataType?}} {{nameInCamelCase}} = "example {{nameInCamelCase}}";
+{{/required}}{{#required}}{{dataType}}? {{nameInCamelCase}} = "{{nameInCamelCase}}" ; {{/required}}{{/isNumber}}{{#isBoolean}}{{^required}}
+{{dataType}} {{nameInCamelCase}} = //"True"; {{/required}} {{#required}}
+{{dataType}} {{nameInCamelCase}} = //"True"; {{/required}}{{/isBoolean}}{{#isString}}
+{{^required}}
+{{{dataType}}} {{nameInCamelCase}} = "example {{nameInCamelCase}}"; {{/required}}{{dataType}} {{nameInCamelCase}} = "{{nameInCamelCase}}" ;{{/required}}{{/isString}}{{#isModel}}{{^required}}
