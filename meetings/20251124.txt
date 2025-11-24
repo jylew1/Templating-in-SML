@@ -1,0 +1,19 @@
+TASK 1
+
+Please install MiKTeX for your Windows computer from here:
+
+https://miktex.org/
+
+and TeXstudio from here:
+
+https://www.texstudio.org/
+
+Using these you will not have error messages like Overleaf gives on compilation lasts too long
+
+TASK 2 
+
+Please follow my review at 
+
+https://github.com/jylew1/Templating-in-SML/blob/main/reports/reviewInterimReport20251124.txt
+
+and fix the problems in your Interim Report.
