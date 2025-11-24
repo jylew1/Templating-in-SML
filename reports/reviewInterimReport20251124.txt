@@ -1,0 +1,59 @@
+Dear Ja Ying,
+
+in the beginning you jump into the middle, you suppose that the reader knows
+about template systems, what are they for, how they work. You should give an
+introduction in the first paragraph.
+
+Please write along the lines of:
+
+"Template systems offer a way to develop web based systems, where part of
+the web pages are generated dynamically through a programming language,
+while the static part of the page is manually written HTML."
+
+and then you can continue with what you wrote.
+
+---
+
+Listing 1.1
+
+Sorry, this is too complicated, please give a very simple example, like a 
+Hello World template. Okay, a little bit more involved.
+
+Also, give the output of Mustache for that simple template. I see Listing 1.2
+where you show a generated C# example, but I guess this is not a result of 
+using the template in Listing 1.1. So have a simple template as input and
+then show the output.
+
+---
+
+Section 2. Introduction
+
+Please use a heading that does not wrap at the end of line. Use a short,
+one line hading. Probably: Standard ML and Mustache.
+
+The text is good.
+
+---
+
+On page 6, I wonder why there is a space between "DSP applications" and
+"Mustache is a logic-less...". Please remove this extra space.
+
+---
+
+3.2.1 Alternative Templating Systems: you nailed it, you wrote the right
+amount of text about the alternatives. Now you do not need more. 
+
+---
+
+4.0.1: Please do not use counting from zero, count sections from 1.
+
+---
+
+Section 5. Self-Review: do not write such personal statements, it is not 
+necessary.
+
+---
+
+Yours
+
+- Gergely
