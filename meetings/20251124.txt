@@ -17,3 +17,8 @@ Please follow my review at
 https://github.com/jylew1/Templating-in-SML/blob/main/reports/reviewInterimReport20251124.txt
 
 and fix the problems in your Interim Report.
+
+TASK 3
+
+If you have chosen Python as the target language, write more on template systems targeting
+Python, what their shortcomings might be
