@@ -22,3 +22,8 @@ TASK 3
 
 If you have chosen Python as the target language, write more on template systems targeting
 Python, what their shortcomings might be
+
+
+TASK 3
+
+Explain well what logic-less templates are in the introduction
