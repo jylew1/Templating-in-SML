@@ -27,3 +27,6 @@ Python, what their shortcomings might be
 TASK 3
 
 Explain well what logic-less templates are in the introduction
+
+Also, find serious references for it, not only a short blog post that uses informal 
+language
