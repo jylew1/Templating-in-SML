@@ -54,6 +54,20 @@ necessary.
 
 ---
 
+Section 6 Project management: you wrote:
+
+"Conduct comparative evaluation against existing Mustache implementations, mea-
+suring correctness beyond the documented 70% threshold"
+
+I asked you in the meeting minutes to give a reference for this 70% threshold.
+Please give one here, and also mention this in the introduction, as this is an
+important starting point for your work.
+
+---
+
+Also, you mention the target language Python in section 6, twice, but please
+give a rationale for this choice.
+
 Yours
 
 - Gergely
