@@ -1,0 +1,27 @@
+{{#vars}}
+{{#people}}
+{{#isComputerScience}}
+// Computer Science Student
+public class {{name}}ComputerScienceProfile 
+{
+    public string Name = "{{name}}";
+    public string Email = "{{email}}";
+    public string Degree = "{{degree}}";
+    
+    public bool IsComputerScience = true;
+    public string Specialization = "Software Development";
+{{/isComputerScience}}
+{{^isComputerScience}}
+// Non-Computer Science Student
+public class {{name}}NonComputerScienceProfile 
+{
+    public string Name = "{{name}}";
+    public string Email = "{{email}}";
+    public string Degree = "{{degree}}";
+{{/isComputerScience}}
+    
+    public string[] Skills = { {{#skills}}"{{skill}}"{{^last}}, {{/last}}{{/skills}} };
+}
+
+{{/people}}
+{{/vars}}

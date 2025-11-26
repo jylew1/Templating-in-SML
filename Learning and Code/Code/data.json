@@ -1,0 +1,39 @@
+{
+  "vars": {
+    "people": [
+      {
+        "name": "JohnSmith",
+        "email": "john@example.com",
+        "degree": "BSc Computer Science",
+        "isComputerScience": true,
+        "skills": [
+          {"skill": "Python"},
+          {"skill": "JavaScript"},
+          {"skill": "SQL", "last": true}
+        ]
+      },
+      {
+        "name": "SarahJohnson",
+        "email": "sarah@example.com",
+        "degree": "MSc Data Science",
+        "isComputerScience": false,
+        "skills": [
+          {"skill": "R"},
+          {"skill": "Machine Learning"},
+          {"skill": "Statistics", "last": true}
+        ]
+      },
+      {
+        "name": "MichaelChen",
+        "email": "michael@example.com",
+        "degree": "BEng Mechanical Engineering",
+        "isComputerScience": false,
+        "skills": [
+          {"skill": "CAD"},
+          {"skill": "MATLAB"},
+          {"skill": "Finite Element Analysis", "last": true}
+        ]
+      }
+    ]
+  }
+}
