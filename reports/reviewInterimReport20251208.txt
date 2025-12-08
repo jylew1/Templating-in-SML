@@ -1,0 +1,38 @@
+Dear Ja Yin,
+
+a few remarks:
+
+Listing 1.1: never cut a listing into two pages. Use a \pagebreak command beforehand then.
+
+---
+
+2. Standard ML and Mustache
+
+When you say "Mustache has achieved implementations available in over 40 programming language"
+
+I guess you talk about Mustache can target over 40 programming languages, not that Mustache
+is _implemented_ in those languages. Please correct this unclear sentence.
+
+Also: what programming language Mustache is implemented in?
+
+---
+
+In all, I liked your chapter 2, it is well written, meaningful sentences.
+
+---
+
+In all, I liked your Interim Report, and I do hope your marker will like it as well.
+
+Probably he will ask: but why Standard ML? Add a few arguments:
+
+* It has a number of standard-following open source implementations
+* It is a small functional language
+* It is a proven tool for text processing including parsing
+* Parsing to algebraic data types enables writing translators easily
+* Compilers work on Unix and on Windows, the implementation might be portable
+
+---
+
+Yours
+
+- Gergely
