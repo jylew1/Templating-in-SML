@@ -1,0 +1,6 @@
+Today we discussed the Interim Report, the word count and some arguments
+about why choosing Standard ML.
+
+TASK 1
+
+Please read my review of your latest draft and follow the suggestions there.
