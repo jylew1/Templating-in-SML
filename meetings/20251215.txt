@@ -28,3 +28,11 @@ library where you will be the sole expert. It's nice to be work in a good team, 
 then, and even as an entry-level developer, you need to be an expert where others are just
 followers. And, experience with a functional language and environment makes you a better
 software developer even if you will not use per se functional languages.
+
+TASK 2
+
+Install CM-Lex and CM-Yacc on your computer so that it will work with Poly/ML.
+
+This might be a non-trivial task and you should ask many questions on it, even multiple ones
+on a day. Do not be afraid of this, but please keep in mind that I will be on holiday from
+20th December to 16th January. I will reply to your e-mails in batch.
