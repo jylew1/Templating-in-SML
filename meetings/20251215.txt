@@ -44,3 +44,13 @@ This might be a non-trivial task and you should ask many questions on it, even
 multiple ones on a day. Do not be afraid of this, but please keep in mind that
 I will be on holiday from 20th December to 16th January. I will reply to your
 e-mails in batch.
+
+TASK 3
+
+Please read Karl Crary's implementation paper
+
+     "Hygienic Source-Code Generation Using Functors"
+
+https://www.cs.cmu.edu/~crary/papers/2018/cmtool.pdf
+
+and, as usual, ask questions in e-mail.
