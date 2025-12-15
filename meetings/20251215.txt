@@ -9,7 +9,7 @@ will create exercises.
 
 I do hope that these tools will allow you to write a decent Mustache
 implementation, but even if there is a theoretical obstacle, it will be very
-educational to learn this tool. For many parsing task, a parser generator is
+educational to learn this tool. For many parsing tasks, a parser generator is
 very convenient, saves a lot of work.
 
 CM-Lex and CM-Yacc improve upon their predecessors, ML-Lex and ML-Yacc by
