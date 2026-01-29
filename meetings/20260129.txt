@@ -1,0 +1,32 @@
+TASK 1
+
+Write a quicksort functor
+
+Here is a quicksort in ML for integers:
+
+(* partition: int -> int list -> (int list * int list)*)
+fun partition p [] = ([], [])
+  | partition p (x::xs) =
+    let
+      val (less, greater) = partition p xs
+    in
+      if x <= p
+      then (x::less, greater)
+      else (less, x::greater)
+    end
+
+(* quicksort: int list -> int list *)
+
+fun quicksort [] = []  (* base case *)
+  | quicksort (p::xs) =
+    let
+      val (lessorequal, greater) = partition p xs
+    in
+      quicksort lessorequal @ [p] @ quicksort greater
+    end 
+
+
+Understand it -- ask questions -- and tailor it to be a general functor, as described
+in my e-mail.
+
+
