@@ -1,3 +1,6 @@
+I need to make the CM-Lex/Yacc example in the manual to work.
+
+
 TASK 1
 
 Write a quicksort functor
@@ -28,5 +31,21 @@ fun quicksort [] = []  (* base case *)
 
 Understand it -- ask questions -- and tailor it to be a general functor, as described
 in my e-mail.
+
+functor QuickSortFun (O:ORDERED) : SORTING
+struct
+
+... in the body of this functor, you can refer to the argument structure as O, and its 
+constituents as 
+
+O.t   the type there
+
+and O.compare
+
+and it will return LESS, EQUAL or GREATER
+
+TASK 2
+
+Continue discussion through e-mail about your questions on CM-Lex.
 
 
