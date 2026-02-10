@@ -24,6 +24,7 @@ sig
     type elem
     type set
     val empty : set
+    val member : elem -> set -> bool
     val insert : elem -> set -> set (* pay attention that this is
 different from the above *)
     val union : set -> set -> set
@@ -32,13 +33,13 @@ end
 
 functor SetFunctor (E : SETELEM) : SET = 
 struct
-    type elem = int
-    type set = int list 
+    type elem = E.elem
+    type set = elem list 
 
     val empty = []
 (* for bool *)
     fun member x [] = false
-        | member x (h::t) = E.equal x h orelse member x 
+        | member x (h::t) = E.equal x h orelse member x t
 (* for elem--> set *)
     fun insert x s = 
         if member x s then s else x :: s
@@ -51,3 +52,24 @@ struct
             then h :: intersect t s2
             else intersect t s2 
 end 
+
+
+structure IntElem : SETELEM =
+struct
+  type elem = int
+  fun equal a b = (a=b)
+end
+
+(*
+*
+* member 2 [1,2,3] = member 2 1::[2,3] = E.equal 2 1 orelse member 2 [2,3] =
+* False orelse member 2 [2,3] = member 2 2::[3] = E.equal 2 2 orelse member 2
+* [3] = True orelse ... = True
+*
+* member 2 [3] = member 2 3::[] = E.equal 2 3 orelse member 2 [] 
+*
+*   Instantiation:
+*)
+
+   structure IntSet = SetFunctor(IntElem);
+
