@@ -51,21 +51,3 @@ struct
             then h :: intersect t s2
             else intersect t s2 
 end 
-
-structure IntElem : SETELEM =
-struct
-    type elem = int
-    fun equal x y = (x = y)
-end
-
-structure IntSet = SetFunctor(IntElem)
-
-val s1 = IntSet.empty
-val s2 = IntSet.insert 1 s1
-val s3 = IntSet.insert 2 s2
-val s4 = IntSet.insert 1 s3
-
-val s5 = IntSet.insert 3 (IntSet.insert 2 IntSet.empty)
-
-val s6 = IntSet.union s4 s5
-val s7 = IntSet.intersect s4 s5
