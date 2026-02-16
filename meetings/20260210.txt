@@ -1,0 +1,7 @@
+Here is a good command to check your code:
+
+~/students/jaying/Learning and Code$ poly <SetStructure.sml |less
+
+TASK 1
+
+Do the ML exercises discussed
