@@ -8,9 +8,7 @@ sig
     val intersect : set -> set -> set
 end
 
-
 (* As a second exercise, have the element the following signature: *)
-
 signature SETELEM =
 sig
    type elem
@@ -18,7 +16,6 @@ sig
 end
 
 (* and implement a functor that creates a set implementation that conforms *)
-
 signature SET =
 sig
     type elem
@@ -39,7 +36,7 @@ struct
     val empty = []
 (* for bool *)
     fun member x [] = false
-        | member x (h::t) = E.equal x h orelse member x t
+        | member x (h::t) = E.equal x h orelse member x t = E.equal x = true 
 (* for elem--> set *)
     fun insert x s = 
         if member x s then s else x :: s
@@ -71,5 +68,5 @@ end
 *   Instantiation:
 *)
 
-   structure IntSet = SetFunctor(IntElem);
+   (* structure IntSet = SetFunctor(IntElem); *)
 
