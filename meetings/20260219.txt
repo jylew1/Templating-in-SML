@@ -1,0 +1,18 @@
+I should look at the Elm implementation of Mustache and write it up
+
+
+
+TASK 1
+
+Please Read Gilmore's ML tutorial, from chapter 4 Types and type inference 
+to chapter 7 Abstract data types.
+
+Try to solve some exercises. If you are ready with some, or have questions, ask me.
+
+How to ask: upload your attempt or solution to your github repository, and send me
+the link to it, and describe in the e-mail what you tried to solve, how you did try
+to solve it, what did you read, what prompts did you write to your artificial 
+intelligence and what answer did you get. The best would be if you stored the
+answers in files, just besides your program file, in the same directory.
+
+
