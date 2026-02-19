@@ -1,13 +1,3 @@
-signature SET =
-sig
-    type elem
-    type set
-    val empty : set
-    val singleton : elem -> set
-    val union : set -> set -> set
-    val intersect : set -> set -> set
-end
-
 (* As a second exercise, have the element the following signature: *)
 signature SETELEM =
 sig
@@ -36,7 +26,7 @@ struct
     val empty = []
 (* for bool *)
     fun member x [] = false
-        | member x (h::t) = E.equal x h orelse member x t = E.equal x = true 
+        | member x (h::t) = E.equal x h orelse member x t
 (* for elem--> set *)
     fun insert x s = 
         if member x s then s else x :: s
@@ -68,5 +58,5 @@ end
 *   Instantiation:
 *)
 
-   (* structure IntSet = SetFunctor(IntElem); *)
+   structure IntSet = SetFunctor(IntElem);
 
