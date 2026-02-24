@@ -10,3 +10,9 @@ TASK 2
 
 Please start writing a parser using CM-Lex and CM-Yacc that
 parses Mustache template files
+
+TASK 3
+
+Look at the Mustache parser implementation in Elm in
+
+https://github.com/emmabastas/elm-mustache/blob/main/src/Mustache.elm
