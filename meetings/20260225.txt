@@ -1,0 +1,12 @@
+TASK 1
+
+Please create a JSON parser for input data in SML.
+
+Use 
+
+https://www.smlnj.org/doc/smlnj-lib/JSON/json-lib.html
+
+TASK 2
+
+Please start writing a parser using CM-Lex and CM-Yacc that
+parses Mustache template files
