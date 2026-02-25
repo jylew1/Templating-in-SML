@@ -1,3 +1,5 @@
+Homework for myself: solve exercise 4.4.1
+
 TASK 1
 
 Please create a JSON parser for input data in SML.
@@ -16,3 +18,11 @@ TASK 3
 Look at the Mustache parser implementation in Elm in
 
 https://github.com/emmabastas/elm-mustache/blob/main/src/Mustache.elm
+
+TASK 4
+
+Look at the Mustache specficiation at
+
+https://github.com/mustache/spec
+
+and try to understand it. If something is not clear, ask questions.
