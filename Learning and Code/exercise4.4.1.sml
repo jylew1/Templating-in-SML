@@ -2,6 +2,6 @@
 
 datatype 'a Nil = Nil
 datatype ('a, 'b) Cons = Cons of 'a * 'b
-fun length (Nil) = 0
-| length (Cons (_, x)) = 1 + length (x)
+fun 'a 'b length (Nil) = 0
+    | length (Cons (_, x)) = 1 + length (x)
 val heterogeneous = Cons (1, Cons (true, Cons (fn x => x, Nil)))
