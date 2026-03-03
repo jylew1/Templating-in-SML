@@ -1,0 +1,9 @@
+Group
+    structure Calculator
+    structure Stream
+is 
+    calc.cmlex.sml
+    calc.cmyacc.sml
+    calc.sml
+
+    ../cmlib/cmlib.cm
