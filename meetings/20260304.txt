@@ -8,3 +8,9 @@ Please try to understand how it works. Ask any questions, no matter
 how it sounds bad.
 
 This will be the basis of writing a Mustache parser.
+
+TASK 3 
+
+Try to give more involved examples of arithmetic expressions to the calculator
+
+and check which input would result in an error.
