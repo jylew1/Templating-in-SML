@@ -1,0 +1,10 @@
+TASK 1
+
+Please run the calculator example in the CM tool distribution.
+
+TASK 2
+
+Please try to understand how it works. Ask any questions, no matter
+how it sounds bad.
+
+This will be the basis of writing a Mustache parser.
