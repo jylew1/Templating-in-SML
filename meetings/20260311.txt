@@ -5,3 +5,10 @@ give as input.
 
 Look at the codebase, especially calc.sml, and see when you get the abstract syntax
 tree. If you have this, write me with this result in an e-mail.
+
+TASK 2
+
+I will answer your question on how to do different precedence rules for arithmetic.
+
+If you will do your experiment, then we can move forward to parse JSON files and
+Mustache templates.
