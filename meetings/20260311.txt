@@ -1,0 +1,7 @@
+TASK 1
+
+Look at how you could get the abstract syntax tree for the expression you
+give as input.
+
+Look at the codebase, especially calc.sml, and see when you get the abstract syntax
+tree. If you have this, write me with this result in an e-mail.
