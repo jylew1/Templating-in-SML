@@ -1,0 +1,25 @@
+If I have the following code structure in SML:
+
+structure Calculator :> 
+ sig
+   val calc : input -> nonterm
+ end = 
+
+struct
+
+...
+
+structure Lexer = CalcLexFun(structure Arg = 
+   struct 
+     (* lexer types and code *)
+   end)
+
+structure Parser = CalcParseFun(structure Arg = 
+   struct
+     (* parser setup code *)
+   end)
+
+fun calc inp = (* expression *)
+end
+
+then where shall I define the datatype for nonterm, and how shall I refer to it at other places so this code would compile?
