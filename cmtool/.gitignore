@@ -1,0 +1,3 @@
+.cm/
+*.cmlex.sml
+*.cmyacc.sml
