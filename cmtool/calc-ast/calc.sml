@@ -2,11 +2,18 @@
 structure Calculator
   :>
   sig
-    val calc : char Stream.stream -> int
+    datatype nonterm = NUM of int 
+                     | ADD of nonterm * nonterm 
+                     | MULT of nonterm * nonterm
+    val calc : char Stream.stream -> nonterm
   end
   =
   struct
      open Stream
+
+    datatype nonterm = NUM of int 
+                     | ADD of nonterm * nonterm 
+                     | MULT of nonterm * nonterm
 
      datatype terminal =
         NUMBER of int
@@ -56,20 +63,20 @@ structure Calculator
           structure Arg =
              struct
                type t = int
-    
+               type nonterm = nonterm
                fun id x = x
     
-               val number_atom = id
+               val number_atom = NUM
                val paren_atom = id
                val atom_factor = id
-               fun times_factor (x, y) = x * y
+               fun times_factor (x, y) = MULT (x, y)
                val factor_term = id
-               fun plus_term (x, y) = x + y
+               fun plus_term (x, y) = ADD (x,y)
     
                datatype terminal = datatype terminal
     
                fun error _ = Fail "syntax error"
              end)
-    
+   
       fun calc strm = #1 (Parser.parse (lazy (fn () => Lexer.lex strm)))
   end

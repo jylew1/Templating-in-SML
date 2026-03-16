@@ -7,15 +7,17 @@ terminal TIMES
 terminal LPAREN
 terminal RPAREN
 
-nonterminal Atom : t =
+
+
+nonterminal Atom : nonterm =
   1:NUMBER => number_atom
   LPAREN 1:Term RPAREN => paren_atom
 
-nonterminal Factor : t =
+nonterminal Factor : nonterm =
   1:Atom => atom_factor
   1:Atom TIMES 2:Factor => times_factor
 
-nonterminal Term : t =
+nonterminal Term : nonterm =
   1:Factor => factor_term
   1:Factor PLUS 2:Term => plus_term
 
