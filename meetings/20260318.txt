@@ -1,0 +1,15 @@
+TASK 1
+
+Please collect a few Mustache template files
+
+and write a Mustache parser with CM tools, using the knowledge in other parsers
+and the specfication file:
+
+http://github.com/mustache/spec
+
+Do not try to cover it once and for all, but do it step by step, to keep your
+parser in a state that actually works. Write test Mustache templates that
+add features of the language step by step and write automatic tests for these.
+
+At this point do not think about the back-end that will generate code, just
+parse the template into an abstract syntax tree.
