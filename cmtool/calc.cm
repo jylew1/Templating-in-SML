@@ -5,5 +5,6 @@ is
     calc.cmlex.sml
     calc.cmyacc.sml
     calc.sml
+    /Users/jayinglew/cmtool/cmlib/cmlib.cm --> relat
 
-    ../cmlib/cmlib.cm
+get abstract syntax file json and for mustache you have to write your own parser

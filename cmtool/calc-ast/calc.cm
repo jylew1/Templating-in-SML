@@ -1,9 +1,11 @@
 Group
     structure Calculator
     structure Stream
+    structure Eval
 is 
     calc.cmlex.sml
     calc.cmyacc.sml
     calc.sml
+    eval.sml
 
-    /home/gergelybuday/local/cmtool/cmlib/cmlib.cm
+    /Users/jayinglew/cmtool/cmlib/cmlib.cm
