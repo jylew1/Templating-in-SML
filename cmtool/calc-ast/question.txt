@@ -23,3 +23,11 @@ fun calc inp = (* expression *)
 end
 
 then where shall I define the datatype for nonterm, and how shall I refer to it at other places so this code would compile?
+
+
+Response: 
+I think you should define it inside the structure but outside the functors because the nonterms defines the nodes of the tree ie a number or multiplication. 
+Thus because the parser and lexer live inside the structure and how they need to have access to these 'nonterms' then nonterm should be defined inside the structure 
+for this purpose and outside the funtors because both the lexer and paarser need to use it and see it (if it was inside the functor it would be somewhat hidden from the parser and lexer).
+it should be reference in the signature so lexer and parser can see it too, 
+
