@@ -20,9 +20,23 @@ struct
     structure StreamStreamable : STREAMABLE =
     struct
         type 'a t = 'a Stream.stream
-        datatype 'a front = datatype Stream.front
+        datatype front = datatype Stream.front
         val front = Stream.front
     end
+
+    (* Terminal type defined once, shared by both Lexer and Parser Arg structs *)
+    datatype terminal
+        = SECTION       of string
+        | CLOSE_SECTION of string
+        | INVERTED      of string
+        | PARTIAL       of string
+        | COMMENT       of string
+        | OPEN_TAG      of string
+        | OPEN_UNESC    of string
+        | UNESC_AMP     of string
+        | TEXT          of string
+        | LBRACE
+        | EOF
 
     (* Drop characters from the front while predicate holds *)
     fun dropLeft p []      = []
@@ -52,19 +66,8 @@ struct
                 type symbol = char
                 val ord = Char.ord
 
-                (* The lexer produces a stream of terminals *)
-                datatype terminal
-                    = SECTION       of string
-                    | CLOSE_SECTION of string
-                    | INVERTED      of string
-                    | PARTIAL       of string
-                    | COMMENT       of string
-                    | OPEN_TAG      of string
-                    | OPEN_UNESC    of string
-                    | UNESC_AMP     of string
-                    | TEXT          of string
-                    | LBRACE
-                    | EOF
+                (* Replicate the shared terminal datatype *)
+                datatype terminal = datatype terminal
 
                 type t = terminal Stream.front
 
@@ -114,7 +117,8 @@ struct
                 fun mk_inverted (name, Template ns, _)      = InvertedSection (name, ns)
                   | mk_inverted (name, n, _)                = InvertedSection (name, [n])
 
-                datatype terminal = datatype Lexer.Arg.terminal
+                (* Replicate the shared terminal datatype *)
+                datatype terminal = datatype terminal
 
                 fun error _ = Fail "parse error"
             end)
