@@ -1,0 +1,31 @@
+sml
+name MustacheParseFun
+
+terminal SECTION of string
+terminal CLOSE_SECTION of string
+terminal INVERTED of string
+terminal PARTIAL of string
+terminal COMMENT of string
+terminal OPEN_TAG of string
+terminal OPEN_UNESC of string
+terminal UNESC_AMP of string
+terminal TEXT of string
+terminal LBRACE
+terminal EOF
+
+nonterminal Template : node =
+  => mk_empty
+  1:Node 2:Template => mk_cons
+
+nonterminal Node : node =
+  1:TEXT                                    => mk_text
+  1:OPEN_TAG                                => mk_variable
+  1:OPEN_UNESC                              => mk_unescaped
+  1:UNESC_AMP                               => mk_unescaped
+  1:COMMENT                                 => mk_comment
+  1:PARTIAL                                 => mk_partial
+  1:SECTION 2:Template 3:CLOSE_SECTION      => mk_section
+  1:INVERTED 2:Template 3:CLOSE_SECTION     => mk_inverted
+  LBRACE                                    => mk_lbrace
+
+start Template

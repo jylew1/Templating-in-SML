@@ -1,0 +1,19 @@
+sml
+name MustacheLexFun
+alphabet 128
+
+set nonbrace = (or (range 0 122) (range 124 127))
+set namechar = (or (range 0 122) 124 (range 126 127))  /* anything except { at 123 and } at 125 */
+
+function lex : t =
+    (seq '{ '{ '# (* namechar) '} '}) => section
+    (seq '{ '{ '/ (* namechar) '} '}) => close_section
+    (seq '{ '{ '^ (* namechar) '} '}) => inverted
+    (seq '{ '{ '> (* namechar) '} '}) => partial
+    (seq '{ '{ '! (* namechar) '} '}) => comment
+    (seq '{ '{ '& (* namechar) '} '}) => unesc_amp
+    (seq '{ '{ '{ (* namechar) '} '} '}) => open_unesc
+    (seq '{ '{ (* namechar) '} '}) => open_tag
+    (+ nonbrace)   => text
+    '{             => lbrace
+    epsilon => eof

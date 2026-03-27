@@ -7,8 +7,6 @@ terminal TIMES
 terminal LPAREN
 terminal RPAREN
 
-
-
 nonterminal Atom : nonterm =
   1:NUMBER => number_atom
   LPAREN 1:Term RPAREN => paren_atom
