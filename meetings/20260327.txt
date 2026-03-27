@@ -1,0 +1,21 @@
+TASK 1
+
+Please work on the Mustache parser in the Easter Break.
+
+Send me e-mails with any questions, I will answer them in working hours.
+
+TASK 2
+
+Write a sketch of your dissertation, the headlines and a paragraph for each
+headline, elaborating what should go there. 
+
+TASK 3
+
+Write a section on why you did use lexer and parser generators, but do not
+base this on what AI said, but on real references.
+
+Compare the arguments of pro and con of generators.
+
+TASK 4
+
+Upload Mustache templates to the repository for testing.
