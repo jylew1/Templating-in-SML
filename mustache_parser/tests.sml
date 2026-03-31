@@ -21,6 +21,10 @@ struct
                 (Template [Text "Hello World"])
                 (Mustache.parse "Hello World")
 
+            val () = assert "implict iterator"
+                (Template [Variable "."])
+                (Mustache.parse "{{.}}")
+
             val () = assert "empty string"
                 (Template [])
                 (Mustache.parse "")
@@ -30,6 +34,14 @@ struct
                 (Template [Variable "name"])
                 (Mustache.parse "{{name}}")
 
+            val () = assert "dotted name"
+                (Template [Variable "person.name"])
+                (Mustache.parse "{{person.name}}")
+
+            val () = assert "standalone tags"
+                (Template [Section ("name", [Text "  World\n"])])
+                (Mustache.parse "{{#name}}\n  World\n{{/name}}")
+           
             val () = assert "variable with surrounding text"
                 (Template [Text "Hello ", Variable "name", Text "!"])
                 (Mustache.parse "Hello {{name}}!")

@@ -2,7 +2,7 @@ structure Ast =
 struct
     datatype node
         = Text of string
-        | Variable of string 
+        | Variable of string
         | UnescapedVariable of string
         | Section of string * node list
         | InvertedSection of string * node list

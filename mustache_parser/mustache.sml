@@ -45,12 +45,11 @@ struct
     (* Drop characters from the back while predicate holds *)
     fun dropRight p xs = List.rev (dropLeft p (List.rev xs))
 
-    (* Extract name from matched tag e.g. {{#items}} -> "items"
-       prefixLen = number of chars to drop from front (2 for {{ , 3 for {{# etc) *)
-    fun extractName prefixLen (match : char list) =
+    (* Extract name from matched tag e.g. {{#items}} -> "items"*)
+    fun extractName prefixLen suffixLen (match : char list) =
         let
-            val chars = List.drop (match, prefixLen)       (* drop prefix *)
-            val chars = List.rev (List.drop (List.rev chars, 2)) (* drop }} *)
+            val chars = List.drop (match, prefixLen)
+            val chars = List.rev (List.drop (List.rev chars, suffixLen))
             fun isSpace c = c = #" " orelse c = #"\t"
             val chars = dropLeft  isSpace chars
             val chars = dropRight isSpace chars
@@ -82,14 +81,14 @@ struct
                 fun emit tok ({ follow, self, ... }:info) =
                     Stream.Cons (tok, Stream.lazy (fn () => #lex self follow))
 
-                fun section       (i as {match,...}:info) = emit (SECTION       (extractName 3 match)) i
-                fun close_section (i as {match,...}:info) = emit (CLOSE_SECTION (extractName 3 match)) i
-                fun inverted      (i as {match,...}:info) = emit (INVERTED      (extractName 3 match)) i
-                fun partial       (i as {match,...}:info) = emit (PARTIAL       (extractName 3 match)) i
-                fun comment       (i as {match,...}:info) = emit (COMMENT       (extractName 3 match)) i
-                fun unesc_amp     (i as {match,...}:info) = emit (UNESC_AMP     (extractName 3 match)) i
-                fun open_unesc    (i as {match,...}:info) = emit (OPEN_UNESC    (extractName 3 match)) i
-                fun open_tag      (i as {match,...}:info) = emit (OPEN_TAG      (extractName 2 match)) i
+                fun section       (i as {match,...}:info) = emit (SECTION       (extractName 3 2 match)) i
+                fun close_section (i as {match,...}:info) = emit (CLOSE_SECTION (extractName 3 2 match)) i
+                fun inverted      (i as {match,...}:info) = emit (INVERTED      (extractName 3 2 match)) i
+                fun partial       (i as {match,...}:info) = emit (PARTIAL       (extractName 3 2 match)) i
+                fun comment       (i as {match,...}:info) = emit (COMMENT       (extractName 3 2 match)) i
+                fun unesc_amp     (i as {match,...}:info) = emit (UNESC_AMP     (extractName 3 2 match)) i
+                fun open_unesc    (i as {match,...}:info) = emit (OPEN_UNESC    (extractName 3 3 match)) i
+                fun open_tag      (i as {match,...}:info) = emit (OPEN_TAG      (extractName 2 2 match)) i
                 fun text          (i as {match,...}:info) = emit (TEXT          (String.implode match)) i
                 fun lbrace        (i:info)                = emit LBRACE i
                 fun eof           _                       = Stream.Nil
@@ -112,9 +111,16 @@ struct
                 fun mk_comment       s                      = Comment s
                 fun mk_partial       s                      = Partial s
                 fun mk_lbrace        ()                     = Text "{"
-                fun mk_section  (name, Template ns, _)      = Section (name, ns)
+                fun stripLeadingNewline (Text s :: rest) =
+                        let val s' = if String.size s > 0 andalso String.sub (s, 0) = #"\n"
+                                     then String.extract (s, 1, NONE)
+                                     else s
+                        in if s' = "" then rest else Text s' :: rest end
+                  | stripLeadingNewline ns = ns
+
+                fun mk_section  (name, Template ns, _)      = Section (name, stripLeadingNewline ns)
                   | mk_section  (name, n, _)                = Section (name, [n])
-                fun mk_inverted (name, Template ns, _)      = InvertedSection (name, ns)
+                fun mk_inverted (name, Template ns, _)      = InvertedSection (name, stripLeadingNewline ns)
                   | mk_inverted (name, n, _)                = InvertedSection (name, [n])
 
                 (* Replicate the shared terminal datatype *)
