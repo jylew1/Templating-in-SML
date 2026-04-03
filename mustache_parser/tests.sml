@@ -100,7 +100,7 @@ struct
                 (Template [Text "Dear ", Variable "name", Text ", you have ", Variable "count", Text " messages."])
                 (Mustache.parse "Dear {{name}}, you have {{count}} messages.")
 
-            (* ---- Real world template ---- *)
+            (* ---- Real world templates ---- *)
             val () =
                 let
                     val template = TextIO.inputAll (TextIO.openIn "../Learning and Code/Code/example.mustache")
@@ -110,6 +110,30 @@ struct
                         Template _ => ( print "PASS: example.mustache parses successfully\n"
                                       ; passed := !passed + 1 )
                       | _          => ( print "FAIL: example.mustache did not return a Template\n"
+                                      ; failed := !failed + 1 )
+                end
+
+            val () =
+                let
+                    val template = TextIO.inputAll (TextIO.openIn "templates/model.mustache")
+                    val result = Mustache.parse template
+                in
+                    case result of
+                        Template _ => ( print "PASS: model.mustache parses successfully\n"
+                                      ; passed := !passed + 1 )
+                      | _          => ( print "FAIL: model.mustache did not return a Template\n"
+                                      ; failed := !failed + 1 )
+                end
+
+            val () =
+                let
+                    val template = TextIO.inputAll (TextIO.openIn "templates/README.mustache")
+                    val result = Mustache.parse template
+                in
+                    case result of
+                        Template _ => ( print "PASS: README.mustache parses successfully\n"
+                                      ; passed := !passed + 1 )
+                      | _          => ( print "FAIL: README.mustache did not return a Template\n"
                                       ; failed := !failed + 1 )
                 end
 
