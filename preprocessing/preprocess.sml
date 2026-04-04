@@ -21,5 +21,4 @@ struct
     fun returnArray (JSON.ARRAY items) = JSON.ARRAY (flagList items)
         | returnArray v = v
 
-
 end 
