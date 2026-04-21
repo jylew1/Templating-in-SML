@@ -20,6 +20,6 @@ val _ = RendererTests.runAll ();
 
 val _ =
     let val template = TextIO.inputAll (TextIO.openIn "../Learning and Code/Code/example.mustache")
-        val src = JSONParser.parseFile "data.json"
+        val src = Preprocess.returnArray (JSONParser.parseFile "data.json")
     in print ("\nRendered output:\n" ^ Render.render template src ^ "\n")
     end;
