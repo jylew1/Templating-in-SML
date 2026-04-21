@@ -1,0 +1,27 @@
+{
+  "vars": {
+  "people": [
+      {
+        "name": "Alice",
+        "email": "alice@example.com",
+        "degree": "Computer Science",
+        "isComputerScience": true,
+        "skills": [
+          { "skill": "Java", "last": false },
+          { "skill": "SML", "last": false },
+          { "skill": "Python", "last": true }
+        ]
+      },
+      {
+        "name": "Bob",
+        "email": "bob@example.com",
+        "degree": "Mathematics",
+        "isComputerScience": false,
+        "skills": [
+          { "skill": "MATLAB", "last": false },
+          { "skill": "R", "last": true }
+        ]
+      }
+  ]
+  }
+}

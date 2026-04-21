@@ -49,6 +49,8 @@ struct
                 JSON.ARRAY items =>
                     String.concat (List.map (fn item =>
                         String.concat (List.map (renderNote item) nodes)) items)
+              | JSON.OBJECT _ =>
+                    String.concat (List.map (renderNote value) nodes)
               | _ => if isTruth value
                      then String.concat (List.map (renderNote ctx) nodes)
                      else ""
