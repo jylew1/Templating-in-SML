@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sml @SMLload=./hello.amd64-linux
