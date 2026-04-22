@@ -8,7 +8,7 @@ In this directory, there's a Hello World program that you need to adapt to your 
 $ cat hello
 #!/bin/bash
 
-sml @SMLload=./hello.amd64-linux
+sml @SMLload=./hello.amd64-linux $@
 ```
 
 You might need something different than amd64-linux.
