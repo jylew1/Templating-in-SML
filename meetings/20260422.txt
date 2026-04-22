@@ -1,0 +1,8 @@
+TASK 1
+
+Please write a standalone renderer, which takes a Mustache template file and a JSON
+record, both in text files, as input and generate the rendered file into standard output. This will enable me to serve as a dumb test engineer who does not know anything
+about the implementation, only about the behaviour of your code.
+
+As discussed per e-mail.
+
