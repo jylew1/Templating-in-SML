@@ -11,6 +11,8 @@ $ cat hello
 sml @SMLload=./hello.amd64-linux
 ```
 
+You might need something different than amd64-linux.
+
 In order to compile `hello.sml`, using `hello.cm`, use the following command:
 ```
 $ ml-build hello.cm Main.main hello
