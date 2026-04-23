@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cat > render.cm << EOF
+Group is
+  \$/basis.cm
+  \$/json-lib.cm
+  $HOME/cmtool/cmlib/streamable.sig
+  $HOME/cmtool/cmlib/lex-engine.sig
+  $HOME/cmtool/cmlib/lex-engine.sml
+  $HOME/cmtool/cmlib/parse-engine.sig
+  $HOME/cmtool/cmlib/parse-engine.sml
+  ../mustache_parser/ast.sml
+  ../mustache_parser/mustache.cmlex.sml
+  ../mustache_parser/mustache.cmyacc.sml
+  ../mustache_parser/mustache.sml
+  renderer.sml
+  main.sml
+EOF
+
+ml-build render.cm Main.main render
+chmod u+x render
