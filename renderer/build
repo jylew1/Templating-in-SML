@@ -1,14 +1,21 @@
 #!/bin/bash
 
+if [ -z "$CMTOOL_HOME" ]; then
+  echo "Error: CMTOOL_HOME is not set."
+  echo "Please set it to the root of your cmtool installation, e.g.:"
+  echo "  export CMTOOL_HOME=~/cmtool"
+  exit 1
+fi
+
 cat > render.cm << EOF
 Group is
   \$/basis.cm
   \$/json-lib.cm
-  $HOME/cmtool/cmlib/streamable.sig
-  $HOME/cmtool/cmlib/lex-engine.sig
-  $HOME/cmtool/cmlib/lex-engine.sml
-  $HOME/cmtool/cmlib/parse-engine.sig
-  $HOME/cmtool/cmlib/parse-engine.sml
+  $CMTOOL_HOME/cmlib/streamable.sig
+  $CMTOOL_HOME/cmlib/lex-engine.sig
+  $CMTOOL_HOME/cmlib/lex-engine.sml
+  $CMTOOL_HOME/cmlib/parse-engine.sig
+  $CMTOOL_HOME/cmlib/parse-engine.sml
   ../mustache_parser/ast.sml
   ../mustache_parser/mustache.cmlex.sml
   ../mustache_parser/mustache.cmyacc.sml
