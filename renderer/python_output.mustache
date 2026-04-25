@@ -1,0 +1,40 @@
+from dataclasses import dataclass
+from typing import Optional, List
+
+
+{{#users}}
+@dataclass
+class {{username}}:
+    """
+    {{profile.bio}}
+
+    Role:     {{role}}
+    Location: {{profile.location}}
+    {{#profile.social.has_twitter}}Twitter:  {{profile.social.twitter}}
+    {{/profile.social.has_twitter}}{{#profile.social.has_github}}GitHub:   {{profile.social.github}}
+    {{/profile.social.has_github}}{{#profile.social.has_linkedin}}LinkedIn: {{profile.social.linkedin}}
+    {{/profile.social.has_linkedin}}"""
+
+    username: str = "{{username}}"
+    email: str = "{{email}}"
+    full_name: str = "{{full_name}}"
+    age: int = {{age}}
+    role: str = "{{role}}"
+    active: bool = {{active}}
+    verified: bool = {{verified}}
+
+    tags: List[str] = (
+        [{{#tags}}"{{value}}"{{^isLast}}, {{/isLast}}{{/tags}}]
+    )
+
+    def __repr__(self):
+        return f"{self.username}(username={self.username!r}, role={self.role!r}, active={self.active})"
+
+    def is_admin(self):
+        return self.role == "admin"
+
+    def is_active(self):
+        return self.active
+
+
+{{/users}}

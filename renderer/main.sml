@@ -12,13 +12,17 @@ struct
   fun main (_, args) =
     case args of
       [templateFile, jsonFile] =>
-        let
+        (let
           val templateStr = readFile templateFile
-          val jsonData    = JSONParser.parseFile jsonFile
+          val jsonData    = Preprocess.returnArray (JSONParser.parseFile jsonFile)
         in
           print (Render.render templateStr jsonData)
         ; OS.Process.success
         end
+        handle e =>
+          ( TextIO.output (TextIO.stdErr, "Error: " ^ exnMessage e ^ "\n")
+          ; OS.Process.exit OS.Process.failure
+          ))
     | _ =>
         ( TextIO.output (TextIO.stdErr,
             "Usage: render <template.mustache> <data.json>\n")

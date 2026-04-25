@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sml @SMLload=./render.amd64-darwin "$@"
