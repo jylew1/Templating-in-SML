@@ -1,0 +1,383 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "generated": "2026-04-25",
+    "description": "Wildlife species database for research and educational purposes",
+    "record_count": 6,
+    "source": "Wildlife Research Institute",
+    "tags": ["animals", "species", "wildlife", "biodiversity"]
+  },
+  "taxonomy_ranks": ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"],
+  "conservation_statuses": ["EX", "EW", "CR", "EN", "VU", "NT", "LC"],
+  "animals": [
+    {
+      "id": "sp-001",
+      "common_name": "Snow Leopard",
+      "class_name": "SnowLeopard",
+      "scientific_name": "Panthera uncia",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Mammalia",
+        "order": "Carnivora",
+        "family": "Felidae",
+        "genus": "Panthera",
+        "species": "uncia"
+      },
+      "conservation": {
+        "status": "VU",
+        "status_full": "Vulnerable",
+        "population_estimate": 4000,
+        "population_trend": "decreasing",
+        "last_assessed": "2023-06-01",
+        "threats": ["habitat loss", "poaching", "prey decline", "climate change"]
+      },
+      "physical": {
+        "weight_kg": { "min": 22, "max": 55 },
+        "length_cm": { "min": 75, "max": 130 },
+        "lifespan_years": { "wild": 10, "captivity": 21 },
+        "distinctive_features": ["thick grey-white fur", "black rosettes", "long thick tail", "large paws"]
+      },
+      "habitat": {
+        "biome": "montane",
+        "regions": ["Central Asia", "South Asia", "East Asia"],
+        "countries": ["Afghanistan", "Bhutan", "China", "India", "Mongolia", "Nepal", "Pakistan", "Russia"],
+        "altitude_m": { "min": 3000, "max": 5500 },
+        "description": "Rocky mountain terrain, alpine meadows and steep cliffs."
+      },
+      "behaviour": {
+        "diet": "carnivore",
+        "prey": ["blue sheep", "ibex", "marmots", "birds"],
+        "activity": "crepuscular",
+        "social": "solitary",
+        "territorial": true,
+        "migration": false
+      },
+      "reproduction": {
+        "gestation_days": 93,
+        "litter_size": { "min": 1, "max": 5 },
+        "breeding_season": "January to March",
+        "sexual_maturity_years": 2
+      },
+      "description": "The snow leopard is a large cat native to the mountain ranges of Central and South Asia, renowned for its elusive nature and stunning coat.",
+      "has_description": true,
+      "fun_fact": "Snow leopards cannot roar — they communicate with chuffs, mews and growls.",
+      "image_url": "https://example.com/images/snow_leopard.jpg",
+      "tags": ["big cat", "endangered", "mountain", "solitary"],
+      "related_species": ["sp-002"]
+    },
+    {
+      "id": "sp-002",
+      "common_name": "Amur Leopard",
+      "class_name": "AmurLeopard",
+      "scientific_name": "Panthera pardus orientalis",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Mammalia",
+        "order": "Carnivora",
+        "family": "Felidae",
+        "genus": "Panthera",
+        "species": "pardus orientalis"
+      },
+      "conservation": {
+        "status": "CR",
+        "status_full": "Critically Endangered",
+        "population_estimate": 100,
+        "population_trend": "increasing",
+        "last_assessed": "2023-03-15",
+        "threats": ["habitat loss", "poaching", "inbreeding", "human encroachment"]
+      },
+      "physical": {
+        "weight_kg": { "min": 25, "max": 48 },
+        "length_cm": { "min": 107, "max": 136 },
+        "lifespan_years": { "wild": 10, "captivity": 20 },
+        "distinctive_features": ["pale cream coat", "widely spaced rosettes", "thick winter coat", "long legs"]
+      },
+      "habitat": {
+        "biome": "temperate forest",
+        "regions": ["Russian Far East", "Northeast China"],
+        "countries": ["Russia", "China"],
+        "altitude_m": { "min": 0, "max": 500 },
+        "description": "Temperate broadleaf and mixed forests with cold winters."
+      },
+      "behaviour": {
+        "diet": "carnivore",
+        "prey": ["roe deer", "sika deer", "hares", "badgers"],
+        "activity": "nocturnal",
+        "social": "solitary",
+        "territorial": true,
+        "migration": false
+      },
+      "reproduction": {
+        "gestation_days": 90,
+        "litter_size": { "min": 1, "max": 4 },
+        "breeding_season": "January to February",
+        "sexual_maturity_years": 3
+      },
+      "description": "The rarest big cat on Earth, the Amur leopard is critically endangered but slowly recovering thanks to conservation efforts in Russia.",
+      "has_description": true,
+      "fun_fact": "Amur leopards can leap more than 6 metres horizontally and 3 metres vertically.",
+      "image_url": "https://example.com/images/amur_leopard.jpg",
+      "tags": ["big cat", "critically endangered", "forest", "solitary"],
+      "related_species": ["sp-001"]
+    },
+    {
+      "id": "sp-003",
+      "common_name": "Axolotl",
+      "class_name": "Axolotl",
+      "scientific_name": "Ambystoma mexicanum",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Amphibia",
+        "order": "Urodela",
+        "family": "Ambystomatidae",
+        "genus": "Ambystoma",
+        "species": "mexicanum"
+      },
+      "conservation": {
+        "status": "CR",
+        "status_full": "Critically Endangered",
+        "population_estimate": 700,
+        "population_trend": "decreasing",
+        "last_assessed": "2022-11-20",
+        "threats": ["water pollution", "invasive species", "urbanisation", "water extraction"]
+      },
+      "physical": {
+        "weight_kg": { "min": 0.06, "max": 0.3 },
+        "length_cm": { "min": 15, "max": 45 },
+        "lifespan_years": { "wild": 10, "captivity": 15 },
+        "distinctive_features": ["external gills", "neoteny", "wide head", "lidless eyes", "colour variants (wild: dark; captive: leucistic/albino)"]
+      },
+      "habitat": {
+        "biome": "freshwater lake",
+        "regions": ["Central Mexico"],
+        "countries": ["Mexico"],
+        "altitude_m": { "min": 2000, "max": 2200 },
+        "description": "Lake Xochimilco and connected canals in Mexico City — highly urbanised habitat."
+      },
+      "behaviour": {
+        "diet": "carnivore",
+        "prey": ["worms", "insects", "small fish", "crustaceans"],
+        "activity": "nocturnal",
+        "social": "semi-solitary",
+        "territorial": false,
+        "migration": false
+      },
+      "reproduction": {
+        "gestation_days": null,
+        "litter_size": { "min": 100, "max": 1000 },
+        "breeding_season": "March to June",
+        "sexual_maturity_years": 1
+      },
+      "description": null,
+      "has_description": false,
+      "fun_fact": "Axolotls are neotenic — they retain larval features (like external gills) throughout their adult life and never fully metamorphose.",
+      "image_url": "https://example.com/images/axolotl.jpg",
+      "tags": ["amphibian", "critically endangered", "aquatic", "neotenic", "regeneration"],
+      "related_species": []
+    },
+    {
+      "id": "sp-004",
+      "common_name": "African Elephant",
+      "class_name": "AfricanElephant",
+      "scientific_name": "Loxodonta africana",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Mammalia",
+        "order": "Proboscidea",
+        "family": "Elephantidae",
+        "genus": "Loxodonta",
+        "species": "africana"
+      },
+      "conservation": {
+        "status": "EN",
+        "status_full": "Endangered",
+        "population_estimate": 415000,
+        "population_trend": "decreasing",
+        "last_assessed": "2021-03-25",
+        "threats": ["poaching", "ivory trade", "habitat loss", "human-wildlife conflict"]
+      },
+      "physical": {
+        "weight_kg": { "min": 2700, "max": 6000 },
+        "length_cm": { "min": 500, "max": 750 },
+        "lifespan_years": { "wild": 60, "captivity": 70 },
+        "distinctive_features": ["large ears", "elongated trunk", "ivory tusks", "wrinkled grey skin", "pillar-like legs"]
+      },
+      "habitat": {
+        "biome": "savanna",
+        "regions": ["Sub-Saharan Africa"],
+        "countries": ["Botswana", "Zimbabwe", "Tanzania", "Kenya", "South Africa", "Zambia", "Mozambique"],
+        "altitude_m": { "min": 0, "max": 3000 },
+        "description": "Savannas, grasslands, forests, deserts and marshes across sub-Saharan Africa."
+      },
+      "behaviour": {
+        "diet": "herbivore",
+        "prey": [],
+        "activity": "diurnal",
+        "social": "matriarchal herd",
+        "territorial": false,
+        "migration": true
+      },
+      "reproduction": {
+        "gestation_days": 645,
+        "litter_size": { "min": 1, "max": 1 },
+        "breeding_season": "year-round",
+        "sexual_maturity_years": 10
+      },
+      "description": "The African elephant is the world's largest land animal, known for its intelligence, complex social structures, and vital role as an ecosystem engineer.",
+      "has_description": true,
+      "fun_fact": "Elephants are one of the few non-human animals known to recognise themselves in a mirror, demonstrating self-awareness.",
+      "image_url": "https://example.com/images/african_elephant.jpg",
+      "tags": ["megafauna", "endangered", "savanna", "social", "keystone species"],
+      "related_species": []
+    },
+    {
+      "id": "sp-005",
+      "common_name": "Mantis Shrimp",
+      "class_name": "MantisShrimp",
+      "scientific_name": "Odontodactylus scyllarus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Arthropoda",
+        "class": "Malacostraca",
+        "order": "Stomatopoda",
+        "family": "Odontodactylidae",
+        "genus": "Odontodactylus",
+        "species": "scyllarus"
+      },
+      "conservation": {
+        "status": "LC",
+        "status_full": "Least Concern",
+        "population_estimate": null,
+        "population_trend": "stable",
+        "last_assessed": "2020-01-10",
+        "threats": ["coral reef degradation", "overfishing"]
+      },
+      "physical": {
+        "weight_kg": { "min": 0.01, "max": 0.18 },
+        "length_cm": { "min": 3, "max": 38 },
+        "lifespan_years": { "wild": 6, "captivity": 6 },
+        "distinctive_features": ["16 types of colour receptors", "smashing claws (dactyl clubs)", "vivid multicolour body", "independently moving eyes"]
+      },
+      "habitat": {
+        "biome": "coral reef",
+        "regions": ["Indo-Pacific"],
+        "countries": ["Australia", "Indonesia", "Philippines", "Japan", "India"],
+        "altitude_m": { "min": -60, "max": -1 },
+        "description": "Shallow tropical and subtropical coral reefs, typically in burrows."
+      },
+      "behaviour": {
+        "diet": "carnivore",
+        "prey": ["crabs", "snails", "clams", "fish"],
+        "activity": "diurnal",
+        "social": "solitary",
+        "territorial": true,
+        "migration": false
+      },
+      "reproduction": {
+        "gestation_days": 14,
+        "litter_size": { "min": 2000, "max": 50000 },
+        "breeding_season": "year-round",
+        "sexual_maturity_years": 1
+      },
+      "description": null,
+      "has_description": false,
+      "fun_fact": "A mantis shrimp's punch accelerates faster than a bullet — striking at 23 m/s with a force of 1500 Newtons.",
+      "image_url": "https://example.com/images/mantis_shrimp.jpg",
+      "tags": ["crustacean", "marine", "coral reef", "apex predator", "colourful"],
+      "related_species": []
+    },
+    {
+      "id": "sp-006",
+      "common_name": "Arctic Fox",
+      "class_name": "ArcticFox",
+      "scientific_name": "Vulpes lagopus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Mammalia",
+        "order": "Carnivora",
+        "family": "Canidae",
+        "genus": "Vulpes",
+        "species": "lagopus"
+      },
+      "conservation": {
+        "status": "LC",
+        "status_full": "Least Concern",
+        "population_estimate": 630000,
+        "population_trend": "stable",
+        "last_assessed": "2019-08-01",
+        "threats": ["climate change", "competition from red fox", "hunting", "disease"]
+      },
+      "physical": {
+        "weight_kg": { "min": 1.4, "max": 9.4 },
+        "length_cm": { "min": 46, "max": 68 },
+        "lifespan_years": { "wild": 3, "captivity": 14 },
+        "distinctive_features": ["seasonal coat change (white in winter, brown/grey in summer)", "small rounded ears", "thick bushy tail", "compact body"]
+      },
+      "habitat": {
+        "biome": "tundra",
+        "regions": ["Arctic Circle"],
+        "countries": ["Canada", "Russia", "Norway", "Iceland", "Greenland", "Finland", "Sweden", "USA"],
+        "altitude_m": { "min": 0, "max": 1000 },
+        "description": "Arctic and alpine tundra, sea ice and coastal cliffs."
+      },
+      "behaviour": {
+        "diet": "omnivore",
+        "prey": ["lemmings", "voles", "seabirds", "eggs", "berries", "carrion"],
+        "activity": "nocturnal",
+        "social": "family groups",
+        "territorial": true,
+        "migration": true
+      },
+      "reproduction": {
+        "gestation_days": 52,
+        "litter_size": { "min": 5, "max": 25 },
+        "breeding_season": "February to April",
+        "sexual_maturity_years": 1
+      },
+      "description": "The Arctic fox is a small fox native to the Arctic tundra, superbly adapted to one of the harshest environments on Earth with its thick insulating fur and seasonal camouflage.",
+      "has_description": true,
+      "fun_fact": "Arctic foxes can withstand temperatures as low as −70 °C — they only start shivering at −70 °C.",
+      "image_url": "https://example.com/images/arctic_fox.jpg",
+      "tags": ["canid", "arctic", "tundra", "seasonal camouflage", "least concern"],
+      "related_species": []
+    }
+  ],
+  "stats": {
+    "total_species": 6,
+    "by_conservation_status": {
+      "CR": 2,
+      "EN": 1,
+      "VU": 1,
+      "LC": 2
+    },
+    "by_class": {
+      "Mammalia": 4,
+      "Amphibia": 1,
+      "Malacostraca": 1
+    },
+    "by_diet": {
+      "carnivore": 4,
+      "herbivore": 1,
+      "omnivore": 1
+    },
+    "population_trend_summary": {
+      "decreasing": 3,
+      "stable": 2,
+      "increasing": 1
+    }
+  },
+  "glossary": [
+    { "term": "neoteny", "definition": "Retention of juvenile features in adult form." },
+    { "term": "crepuscular", "definition": "Active primarily during twilight hours (dawn and dusk)." },
+    { "term": "matriarchal", "definition": "Social group led by an older female." },
+    { "term": "keystone species", "definition": "A species that has a disproportionately large effect on its ecosystem." },
+    { "term": "gestation", "definition": "The period of development inside the womb from conception to birth." }
+  ],
+  "empty_array": [],
+  "null_value": null
+}

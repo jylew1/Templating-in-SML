@@ -1,0 +1,567 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "generated": "2026-04-25",
+    "description": "Large test dataset for development and testing purposes",
+    "record_count": 50,
+    "tags": ["test", "development", "sample", "large"]
+  },
+  "config": {
+    "pagination": {
+      "page": 1,
+      "per_page": 50,
+      "total_pages": 10,
+      "total_records": 500
+    },
+    "filters": {
+      "active_only": false,
+      "include_deleted": true,
+      "date_range": {
+        "start": "2024-01-01",
+        "end": "2026-04-25"
+      }
+    },
+    "sort": {
+      "field": "created_at",
+      "direction": "desc"
+    }
+  },
+  "users": [
+    {
+      "id": 1,
+      "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "username": "alice_wonder",
+      "email": "alice@example.com",
+      "full_name": "Alice Wonderland",
+      "age": 28,
+      "active": true,
+      "verified": true,
+      "role": "admin",
+      "score": 98.5,
+      "balance": 1250.75,
+      "created_at": "2024-01-15T09:23:11Z",
+      "updated_at": "2026-03-10T14:05:00Z",
+      "last_login": "2026-04-24T08:00:00Z",
+      "profile": {
+        "bio": "Software engineer and avid reader.",
+        "avatar_url": "https://example.com/avatars/alice.png",
+        "location": "London, UK",
+        "website": "https://alice.dev",
+        "social": {
+          "twitter": "@alice_wonder",
+          "github": "alice-wonder",
+          "linkedin": "alice-wonderland"
+        }
+      },
+      "preferences": {
+        "theme": "dark",
+        "language": "en-GB",
+        "notifications": {
+          "email": true,
+          "sms": false,
+          "push": true
+        },
+        "timezone": "Europe/London"
+      },
+      "tags": ["power-user", "beta-tester", "contributor"],
+      "orders": [101, 204, 309, 412]
+    },
+    {
+      "id": 2,
+      "uuid": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "username": "bob_builder",
+      "email": "bob@example.com",
+      "full_name": "Bob Builder",
+      "age": 35,
+      "active": true,
+      "verified": false,
+      "role": "user",
+      "score": 72.0,
+      "balance": 340.00,
+      "created_at": "2024-03-22T11:00:00Z",
+      "updated_at": "2026-01-05T09:30:00Z",
+      "last_login": "2026-04-20T12:45:00Z",
+      "profile": {
+        "bio": "Hobbyist woodworker and DIY enthusiast.",
+        "avatar_url": "https://example.com/avatars/bob.png",
+        "location": "Manchester, UK",
+        "website": null,
+        "social": {
+          "twitter": null,
+          "github": "bobbuilds",
+          "linkedin": null
+        }
+      },
+      "preferences": {
+        "theme": "light",
+        "language": "en-GB",
+        "notifications": {
+          "email": true,
+          "sms": true,
+          "push": false
+        },
+        "timezone": "Europe/London"
+      },
+      "tags": ["new-user"],
+      "orders": [105, 210]
+    },
+    {
+      "id": 3,
+      "uuid": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "username": "carol_danvers",
+      "email": "carol@example.com",
+      "full_name": "Carol Danvers",
+      "age": 31,
+      "active": false,
+      "verified": true,
+      "role": "moderator",
+      "score": 85.3,
+      "balance": 0.00,
+      "created_at": "2023-11-01T07:15:00Z",
+      "updated_at": "2025-12-20T16:00:00Z",
+      "last_login": "2025-12-18T10:00:00Z",
+      "profile": {
+        "bio": "Community manager and cat lover.",
+        "avatar_url": "https://example.com/avatars/carol.png",
+        "location": "Edinburgh, UK",
+        "website": "https://carol-writes.com",
+        "social": {
+          "twitter": "@carol_d",
+          "github": null,
+          "linkedin": "carol-danvers-mod"
+        }
+      },
+      "preferences": {
+        "theme": "system",
+        "language": "en-US",
+        "notifications": {
+          "email": false,
+          "sms": false,
+          "push": false
+        },
+        "timezone": "Europe/Edinburgh"
+      },
+      "tags": ["moderator", "long-term"],
+      "orders": []
+    },
+    {
+      "id": 4,
+      "uuid": "d4e5f6a7-b8c9-0123-defa-234567890123",
+      "username": "dave_jones",
+      "email": "dave@example.com",
+      "full_name": "Dave Jones",
+      "age": 42,
+      "active": true,
+      "verified": true,
+      "role": "user",
+      "score": 55.1,
+      "balance": 9800.50,
+      "created_at": "2022-06-10T14:00:00Z",
+      "updated_at": "2026-04-01T11:20:00Z",
+      "last_login": "2026-04-25T07:30:00Z",
+      "profile": {
+        "bio": "Retired teacher, now into cycling and travel.",
+        "avatar_url": null,
+        "location": "Bristol, UK",
+        "website": null,
+        "social": {
+          "twitter": null,
+          "github": null,
+          "linkedin": "dave-jones-42"
+        }
+      },
+      "preferences": {
+        "theme": "light",
+        "language": "en-GB",
+        "notifications": {
+          "email": true,
+          "sms": true,
+          "push": true
+        },
+        "timezone": "Europe/London"
+      },
+      "tags": ["premium", "long-term", "high-value"],
+      "orders": [100, 201, 302, 403, 504, 605]
+    },
+    {
+      "id": 5,
+      "uuid": "e5f6a7b8-c9d0-1234-efab-345678901234",
+      "username": "eve_chen",
+      "email": "eve@example.com",
+      "full_name": "Eve Chen",
+      "age": 26,
+      "active": true,
+      "verified": true,
+      "role": "user",
+      "score": 91.7,
+      "balance": 450.25,
+      "created_at": "2025-02-14T10:00:00Z",
+      "updated_at": "2026-04-10T09:00:00Z",
+      "last_login": "2026-04-25T06:55:00Z",
+      "profile": {
+        "bio": "Data scientist. Coffee aficionado.",
+        "avatar_url": "https://example.com/avatars/eve.png",
+        "location": "Cambridge, UK",
+        "website": "https://evechen.io",
+        "social": {
+          "twitter": "@evechen_data",
+          "github": "eve-chen",
+          "linkedin": "eve-chen-ds"
+        }
+      },
+      "preferences": {
+        "theme": "dark",
+        "language": "zh-CN",
+        "notifications": {
+          "email": true,
+          "sms": false,
+          "push": true
+        },
+        "timezone": "Europe/London"
+      },
+      "tags": ["data-science", "beta-tester", "active"],
+      "orders": [310, 411, 512]
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-001",
+      "sku": "WDG-BLU-SM",
+      "name": "Blue Widget Small",
+      "category": "Widgets",
+      "subcategory": "Standard",
+      "description": "A small blue widget suitable for general use.",
+      "price": 9.99,
+      "currency": "GBP",
+      "stock": 150,
+      "low_stock_threshold": 20,
+      "in_stock": true,
+      "discontinued": false,
+      "weight_kg": 0.25,
+      "dimensions_cm": { "length": 5, "width": 3, "height": 2 },
+      "ratings": { "average": 4.3, "count": 212 },
+      "images": [
+        "https://example.com/images/prod-001-a.jpg",
+        "https://example.com/images/prod-001-b.jpg"
+      ],
+      "attributes": {
+        "colour": "blue",
+        "material": "plastic",
+        "size": "small",
+        "waterproof": true
+      },
+      "tags": ["bestseller", "clearance"]
+    },
+    {
+      "id": "prod-002",
+      "sku": "WDG-RED-LG",
+      "name": "Red Widget Large",
+      "category": "Widgets",
+      "subcategory": "Premium",
+      "description": "A large red widget for heavy-duty applications.",
+      "price": 24.99,
+      "currency": "GBP",
+      "stock": 8,
+      "low_stock_threshold": 10,
+      "in_stock": true,
+      "discontinued": false,
+      "weight_kg": 1.1,
+      "dimensions_cm": { "length": 15, "width": 10, "height": 8 },
+      "ratings": { "average": 3.9, "count": 87 },
+      "images": [
+        "https://example.com/images/prod-002-a.jpg"
+      ],
+      "attributes": {
+        "colour": "red",
+        "material": "metal",
+        "size": "large",
+        "waterproof": false
+      },
+      "tags": ["low-stock", "premium"]
+    },
+    {
+      "id": "prod-003",
+      "sku": "GAD-PRO-X1",
+      "name": "Gadget Pro X1",
+      "category": "Gadgets",
+      "subcategory": "Electronics",
+      "description": "Next-generation gadget with smart connectivity.",
+      "price": 149.00,
+      "currency": "GBP",
+      "stock": 0,
+      "low_stock_threshold": 5,
+      "in_stock": false,
+      "discontinued": false,
+      "weight_kg": 0.5,
+      "dimensions_cm": { "length": 12, "width": 7, "height": 1.5 },
+      "ratings": { "average": 4.8, "count": 504 },
+      "images": [
+        "https://example.com/images/prod-003-a.jpg",
+        "https://example.com/images/prod-003-b.jpg",
+        "https://example.com/images/prod-003-c.jpg"
+      ],
+      "attributes": {
+        "colour": "black",
+        "material": "aluminium",
+        "size": "medium",
+        "waterproof": true,
+        "wireless": true,
+        "battery_hours": 24
+      },
+      "tags": ["out-of-stock", "top-rated", "new-arrival"]
+    },
+    {
+      "id": "prod-004",
+      "sku": "GRN-ECO-BAG",
+      "name": "Eco Tote Bag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "description": "Sustainable cotton tote bag, perfect for everyday use.",
+      "price": 12.50,
+      "currency": "GBP",
+      "stock": 500,
+      "low_stock_threshold": 50,
+      "in_stock": true,
+      "discontinued": false,
+      "weight_kg": 0.15,
+      "dimensions_cm": { "length": 38, "width": 42, "height": 0 },
+      "ratings": { "average": 4.6, "count": 1320 },
+      "images": [
+        "https://example.com/images/prod-004-a.jpg"
+      ],
+      "attributes": {
+        "colour": "natural",
+        "material": "organic cotton",
+        "size": "one-size",
+        "waterproof": false
+      },
+      "tags": ["eco", "bestseller"]
+    }
+  ],
+  "orders": [
+    {
+      "id": 101,
+      "user_id": 1,
+      "status": "delivered",
+      "payment_status": "paid",
+      "placed_at": "2026-01-10T10:30:00Z",
+      "delivered_at": "2026-01-13T14:00:00Z",
+      "shipping_address": {
+        "line1": "12 Baker Street",
+        "line2": null,
+        "city": "London",
+        "postcode": "NW1 6XE",
+        "country": "GB"
+      },
+      "items": [
+        { "product_id": "prod-001", "quantity": 3, "unit_price": 9.99 },
+        { "product_id": "prod-004", "quantity": 1, "unit_price": 12.50 }
+      ],
+      "subtotal": 42.47,
+      "discount": 0.00,
+      "shipping": 3.99,
+      "tax": 7.29,
+      "total": 53.75,
+      "notes": null,
+      "tracking_number": "RM123456789GB"
+    },
+    {
+      "id": 204,
+      "user_id": 1,
+      "status": "processing",
+      "payment_status": "paid",
+      "placed_at": "2026-04-20T08:15:00Z",
+      "delivered_at": null,
+      "shipping_address": {
+        "line1": "12 Baker Street",
+        "line2": null,
+        "city": "London",
+        "postcode": "NW1 6XE",
+        "country": "GB"
+      },
+      "items": [
+        { "product_id": "prod-003", "quantity": 1, "unit_price": 149.00 }
+      ],
+      "subtotal": 149.00,
+      "discount": 14.90,
+      "shipping": 0.00,
+      "tax": 26.82,
+      "total": 160.92,
+      "notes": "Please leave with neighbour if not in.",
+      "tracking_number": null
+    },
+    {
+      "id": 105,
+      "user_id": 2,
+      "status": "cancelled",
+      "payment_status": "refunded",
+      "placed_at": "2025-11-05T16:00:00Z",
+      "delivered_at": null,
+      "shipping_address": {
+        "line1": "7 Oak Avenue",
+        "line2": "Apt 3B",
+        "city": "Manchester",
+        "postcode": "M1 2AB",
+        "country": "GB"
+      },
+      "items": [
+        { "product_id": "prod-002", "quantity": 2, "unit_price": 24.99 }
+      ],
+      "subtotal": 49.98,
+      "discount": 0.00,
+      "shipping": 5.99,
+      "tax": 9.00,
+      "total": 64.97,
+      "notes": "Cancelled by user before dispatch.",
+      "tracking_number": null
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-001",
+      "type": "user.login",
+      "actor_id": 1,
+      "timestamp": "2026-04-24T08:00:00Z",
+      "ip": "203.0.113.42",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "success": true,
+      "metadata": {}
+    },
+    {
+      "id": "evt-002",
+      "type": "user.login",
+      "actor_id": 2,
+      "timestamp": "2026-04-20T12:45:00Z",
+      "ip": "198.51.100.23",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "success": true,
+      "metadata": {}
+    },
+    {
+      "id": "evt-003",
+      "type": "order.placed",
+      "actor_id": 1,
+      "timestamp": "2026-04-20T08:15:00Z",
+      "ip": "203.0.113.42",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "success": true,
+      "metadata": { "order_id": 204 }
+    },
+    {
+      "id": "evt-004",
+      "type": "user.login_failed",
+      "actor_id": 3,
+      "timestamp": "2026-04-22T09:10:00Z",
+      "ip": "192.0.2.100",
+      "user_agent": "curl/7.68.0",
+      "success": false,
+      "metadata": { "reason": "invalid_password", "attempt": 3 }
+    },
+    {
+      "id": "evt-005",
+      "type": "product.viewed",
+      "actor_id": 5,
+      "timestamp": "2026-04-25T06:55:00Z",
+      "ip": "203.0.113.99",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0)",
+      "success": true,
+      "metadata": { "product_id": "prod-003" }
+    }
+  ],
+  "stats": {
+    "users": {
+      "total": 500,
+      "active": 412,
+      "verified": 390,
+      "by_role": {
+        "admin": 3,
+        "moderator": 12,
+        "user": 485
+      }
+    },
+    "products": {
+      "total": 84,
+      "in_stock": 71,
+      "out_of_stock": 13,
+      "discontinued": 5,
+      "by_category": {
+        "Widgets": 24,
+        "Gadgets": 18,
+        "Accessories": 42
+      }
+    },
+    "orders": {
+      "total": 1240,
+      "by_status": {
+        "pending": 45,
+        "processing": 130,
+        "shipped": 210,
+        "delivered": 820,
+        "cancelled": 35
+      },
+      "revenue": {
+        "total": 98432.10,
+        "this_month": 12340.50,
+        "last_month": 10980.00,
+        "currency": "GBP"
+      }
+    },
+    "events": {
+      "total_today": 8420,
+      "logins_today": 312,
+      "failed_logins_today": 14
+    }
+  },
+  "feature_flags": {
+    "new_dashboard": true,
+    "beta_checkout": false,
+    "dark_mode": true,
+    "ai_recommendations": true,
+    "multi_currency": false,
+    "social_login": true
+  },
+  "errors": [
+    {
+      "code": "ERR_NOT_FOUND",
+      "message": "Resource not found",
+      "http_status": 404,
+      "example_path": "/api/users/9999"
+    },
+    {
+      "code": "ERR_UNAUTHORIZED",
+      "message": "Authentication required",
+      "http_status": 401,
+      "example_path": "/api/admin/stats"
+    },
+    {
+      "code": "ERR_VALIDATION",
+      "message": "One or more fields failed validation",
+      "http_status": 422,
+      "example_path": "/api/users",
+      "fields": ["email", "username"]
+    }
+  ],
+  "empty_array": [],
+  "null_value": null,
+  "boolean_true": true,
+  "boolean_false": false,
+  "large_integer": 9007199254740991,
+  "small_float": 0.000123,
+  "negative_number": -42,
+  "unicode_string": "Hello, 世界! Héllo Wörld. Привет мир.",
+  "nested_deep": {
+    "level1": {
+      "level2": {
+        "level3": {
+          "level4": {
+            "level5": {
+              "value": "deeply nested value",
+              "array": [1, 2, 3],
+              "flag": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

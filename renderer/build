@@ -27,23 +27,3 @@ EOF
 
 ml-build render.cm Main.main render
 chmod u+x render
-
-cat > preprocess-debug.cm << EOF
-Group is
-  \$/basis.cm
-  \$/json-lib.cm
-  $CMTOOL_HOME/cmlib/streamable.sig
-  $CMTOOL_HOME/cmlib/lex-engine.sig
-  $CMTOOL_HOME/cmlib/lex-engine.sml
-  $CMTOOL_HOME/cmlib/parse-engine.sig
-  $CMTOOL_HOME/cmlib/parse-engine.sml
-  ../mustache_parser/ast.sml
-  ../mustache_parser/mustache.cmlex.sml
-  ../mustache_parser/mustache.cmyacc.sml
-  ../mustache_parser/mustache.sml
-  ../preprocessing/preprocess.sml
-  preprocess_debug.sml
-EOF
-
-ml-build preprocess-debug.cm PreprocessDebug.main preprocess-debug
-chmod u+x preprocess-debug

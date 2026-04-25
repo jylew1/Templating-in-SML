@@ -1,0 +1,93 @@
+from dataclasses import dataclass
+from typing import Optional, List
+
+{{#animals}}
+@dataclass
+class {{{class_name}}}:
+    """
+    {{#has_description}}{{{description}}}{{/has_description}}{{^has_description}}*No description available.*{{/has_description}}
+
+    Scientific: {{scientific_name}}
+    Class:      {{taxonomy.class}}
+    Diet:       {{behaviour.diet}}
+    Habitat:    {{habitat.biome}}
+    Status:     {{conservation.status_full}}
+    Fun fact:   {{{fun_fact}}}
+    """
+
+    id: str = "{{id}}"
+    common_name: str = "{{common_name}}"
+    scientific_name: str = "{{scientific_name}}"
+
+    taxonomy_kingdom: str = "{{taxonomy.kingdom}}"
+    taxonomy_phylum: str = "{{taxonomy.phylum}}"
+    taxonomy_class: str = "{{taxonomy.class}}"
+    taxonomy_order: str = "{{taxonomy.order}}"
+    taxonomy_family: str = "{{taxonomy.family}}"
+    taxonomy_genus: str = "{{taxonomy.genus}}"
+    taxonomy_species: str = "{{taxonomy.species}}"
+
+    conservation_status: str = "{{conservation.status}}"
+    conservation_status_full: str = "{{conservation.status_full}}"
+    conservation_population_estimate: Optional[int] = {{#conservation.has_population_estimate}}{{conservation.population_estimate}}{{/conservation.has_population_estimate}}{{^conservation.has_population_estimate}}None{{/conservation.has_population_estimate}}
+    conservation_population_trend: str = "{{conservation.population_trend}}"
+
+    weight_kg_min: float = {{physical.weight_kg.min}}
+    weight_kg_max: float = {{physical.weight_kg.max}}
+    length_cm_min: float = {{physical.length_cm.min}}
+    length_cm_max: float = {{physical.length_cm.max}}
+    lifespan_wild: int = {{physical.lifespan_years.wild}}
+    lifespan_captivity: int = {{physical.lifespan_years.captivity}}
+
+    habitat_biome: str = "{{habitat.biome}}"
+    habitat_description: str = "{{{habitat.description}}}"
+    altitude_min: int = {{habitat.altitude_m.min}}
+    altitude_max: int = {{habitat.altitude_m.max}}
+
+    diet: str = "{{behaviour.diet}}"
+    activity: str = "{{behaviour.activity}}"
+    social: str = "{{behaviour.social}}"
+    territorial: bool = {{behaviour.territorial}}
+    migration: bool = {{behaviour.migration}}
+
+    gestation_days: Optional[int] = {{#reproduction.has_gestation_days}}{{reproduction.gestation_days}}{{/reproduction.has_gestation_days}}{{^reproduction.has_gestation_days}}None{{/reproduction.has_gestation_days}}
+    litter_size_min: int = {{reproduction.litter_size.min}}
+    litter_size_max: int = {{reproduction.litter_size.max}}
+    breeding_season: str = "{{reproduction.breeding_season}}"
+    sexual_maturity_years: int = {{reproduction.sexual_maturity_years}}
+
+    image_url: str = "{{image_url}}"
+
+    threats: List[str] = (
+        [{{#conservation.threats}}"{{value}}"{{^isLast}}, {{/isLast}}{{/conservation.threats}}]
+    )
+
+    countries: List[str] = (
+        [{{#habitat.countries}}"{{value}}"{{^isLast}}, {{/isLast}}{{/habitat.countries}}]
+    )
+
+    prey: List[str] = (
+        [{{#behaviour.prey}}"{{value}}"{{^isLast}}, {{/isLast}}{{/behaviour.prey}}]
+    )
+
+    tags: List[str] = (
+        [{{#tags}}"{{value}}"{{^isLast}}, {{/isLast}}{{/tags}}]
+    )
+
+    related_species: List[str] = (
+        [{{#related_species}}"{{value}}"{{^isLast}}, {{/isLast}}{{/related_species}}]
+    )
+
+    def __repr__(self):
+        return f"{self.common_name}(scientific={self.scientific_name!r}, status={self.conservation_status_full!r})"
+
+    def is_endangered(self):
+        return self.conservation_status in ("CR", "EN", "VU")
+
+    def is_solitary(self):
+        return self.social == "solitary"
+
+    def is_carnivore(self):
+        return self.diet == "carnivore"
+
+{{/animals}}

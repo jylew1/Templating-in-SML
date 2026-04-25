@@ -1,101 +1,170 @@
-# What does renderer.sml intend to do?
-renderer.sml takes a parsed Mustache AST and a JSON value (the context) and produces a rendered string output.
+# Renderer
 
-The main entry point is Render.render, which takes a template string and JSON data and returns the final rendered string.
+## What does it do?
 
-# Functions
+The renderer takes a JSON data file and a Mustache template file, enriches the JSON with extra computed fields (via the preprocessor), and then renders the template using that enriched data to produce the final output.
 
-1. renderNote
-Takes a JSON context and a single AST node and returns a string. Handles all node types:
-- Text s — returns the literal text as-is
-- Comment _ — returns empty string
-- Variable name — looks up name in context, converts to string, HTML escapes it
-- UnescapedVariable name — same as Variable but skips HTML escaping
-- Section (name, nodes) — renders inner nodes if value is truthy; loops over each item if value is a JSON array
-- InvertedSection (name, nodes) — renders inner nodes only if value is falsy
-- Template nodes — renders all nodes and joins the results into one string
-- Partial _ - not yet implemented, returns empty string
-- DelimiterChange _ — not supported, returns empty string
+```
+JSON file  ──►  Preprocessor  ──►  enriched JSON  ──►  Mustache renderer  ──►  output
+                (preprocess.sml)                        (renderer.sml)
+```
 
-2. resolve
-Walks a dot-separated path (e.g. "person.name") through the JSON context to find a value. "." refers to the current context itself.
+For example, given a JSON file of animals and a Python dataclass template, the renderer outputs valid Python code — with `None` for null fields, no trailing commas in lists, and optional sections shown or hidden automatically.
 
-3. isTruth
-Returns false for JSON.NULL, JSON.BOOL false, and empty JSON.ARRAY. Everything else is truthy.
+---
 
-4. jsonToString
-Converts a JSON value to a string. Objects and arrays return empty string.
+## How to use it
 
-5. htmlEscape
-Escapes &, <, >, ", ' to their HTML entities to prevent XSS.
+### 1. Set CMTOOL_HOME
 
-# How to use renderer.sml
+Set this environment variable to the root of your [cmtool](https://github.com/standardml/cmtool) installation:
 
-1. go to the /renderer directory
-2. go into SML/NJ
-3. use "loadrender.sml";
-
-loadrender.sml does the following in order:
-- loads the JSON library
-- loads the cmlib lexer and parser engine
-- loads the mustache parser (ast.sml, mustache.sml and the generated cmlex/cmyacc files)
-- loads preprocess.sml
-- loads renderer.sml
-- loads and runs tests_renderer.sml — prints PASS/FAIL for each test
-- reads example.mustache and data.json, renders them together and prints the final output
-
-# Running the tests
-
-- tests run automatically when you use "loadrender.sml";
-- each test prints PASS or FAIL followed by the test name
-- a summary is printed at the end, e.g. 14 passed, 0 failed.
-- sml must be launched from inside renderer/ so relative paths work
-
-# Output
-
-after the tests, the rendered output is printed using example.mustache as the template and data.json as the data.
-data.json contains two people — Alice (Computer Science) and Bob (Mathematics) — each with name, email, degree, isComputerScience flag and a skills list.
-the output is a rendered class profile for each person, using sections and inverted sections to switch between the CS and non-CS templates.
-
-# Standalone Renderer
-
-A command-line program that takes a Mustache template file and a JSON data file and writes the rendered output to standard output.
-
-## Requirements
-
-- SML/NJ (Standard ML of New Jersey)
-- [cmtool](https://github.com/standardml/cmtool) installed somewhere on your machine
-
-## Setup
-
-Before building, set the `CMTOOL_HOME` environment variable to the root of your cmtool installation:
 ```bash
 export CMTOOL_HOME=~/cmtool
 ```
-You can add this to your `~/.bashrc` or `~/.zshrc` to avoid setting it every time.
 
-## Building
-From the `renderer/` directory, run:
+Add this line to `~/.zshrc` (or `~/.bashrc`) so you do not need to set it every time:
+
 ```bash
+echo 'export CMTOOL_HOME=~/cmtool' >> ~/.zshrc
+```
+
+### 2. Build
+
+From the `renderer/` directory:
+
+```bash
+cd renderer/
 ./build
 ```
-This generates `render.cm` with the correct paths for your machine and compiles the program using `ml-build`.
 
-## Usage
+`build` generates `render.cm` with the correct paths for your machine, then compiles the program using `ml-build`. You will see SML/NJ compiler output ending with something like `[code: ..., data: ..., env: ... bytes]`. This is normal.
+
+You only need to re-run `./build` if you change any `.sml` source files.
+
+### 3. Run
+
 ```bash
 ./render <template.mustache> <data.json>
 ```
 
-### Example
+Output is printed to stdout. To save it to a file:
 
 ```bash
-./render test.mustache data.json
+./render template.mustache data.json > output.txt
 ```
-This will print the rendered output to standard output.
+
+---
+
+## Example datasets
+
+All datasets
+ are in the `testing_data/` folder.
+
+### Animals (main demo)
+
+```bash
+./render testing_data/animals.mustache testing_data/animals.json
+```
+
+6 wildlife species rendered as Python dataclasses. Demonstrates optional fields, nullable integers, comma-correct lists, and raw text output.
+
+### Users
+
+```bash
+./render testing_data/users_dataclass.mustache testing_data/users_dataclass.json
+```
+
+User records with optional social links. Demonstrates the `has_x` pattern for fields that may or may not be present.
+
+### Small test
+
+```bash
+./render testing_data/small_test.mustache testing_data/small_test.json
+```
+
+Minimal example for quick sanity checks when editing the renderer or preprocessor.
+
+---
 
 ## Files
 
-- `main.sml` — entry point; reads both files and calls the renderer
-- `build` — build script; generates `render.cm` using `CMTOOL_HOME` and compiles
-- `render` — shell script to run the compiled program
-- `render.cm` — generated by `build`, do not edit or commit this file
+| File | Purpose |
+|------|---------|
+| `main.sml` | Entry point — reads template and JSON files, runs preprocessor, renders, prints to stdout |
+| `renderer.sml` | Core rendering logic — walks Mustache AST against the JSON context |
+| `build` | Build script — generates `render.cm` using `CMTOOL_HOME` and runs `ml-build` |
+| `render` | Shell script — runs the compiled heap image via `sml @SMLload=` |
+| `render.cm` | Generated by `build` — do not edit or commit |
+| `render.amd64-darwin` | Compiled heap image — do not commit |
+| `testing_data/` | Example templates and JSON datasets |
+
+---
+
+## preprocess.sml
+
+Before rendering, `Preprocess.returnArray` walks the entire JSON tree and enriches it with extra fields. This is the core contribution of the FYP — it gives a logic-less Mustache template enough information to handle optional fields, nullable values, and list formatting without any code in the template itself.
+
+| Input field type | What the preprocessor adds |
+|-----------------|---------------------------|
+| `null` field `"x"` | sets `x` to `""` and adds `has_x: false` |
+| string field `"x"` | keeps value, adds `has_x: true` |
+| integer / float / bool field `"x"` | keeps value, adds `has_x: true` |
+| array field | adds `isFirst: true/false` and `isLast: true/false` to every item |
+
+The preprocessor is fully generic — it works by type, with no hardcoded field names.
+
+**Example — optional field:**
+```mustache
+{{#has_description}}{{{description}}}{{/has_description}}
+{{^has_description}}*No description available.*{{/has_description}}
+```
+
+**Example — nullable integer:**
+```mustache
+gestation_days: Optional[int] = {{#reproduction.has_gestation_days}}{{reproduction.gestation_days}}{{/reproduction.has_gestation_days}}{{^reproduction.has_gestation_days}}None{{/reproduction.has_gestation_days}}
+```
+
+**Example — comma-correct list:**
+```mustache
+[{{#tags}}"{{value}}"{{^isLast}}, {{/isLast}}{{/tags}}]
+```
+
+---
+
+## renderer.sml
+
+`renderer.sml` walks a parsed Mustache AST node by node against the JSON context and produces a string.
+
+**renderNote** — handles each AST node type:
+- `Text s` — returns the literal text as-is
+- `Comment _` — returns empty string
+- `Variable name` — looks up name in context, converts to string, HTML-escapes it (`{{name}}`)
+- `UnescapedVariable name` — same but skips HTML escaping (`{{{name}}}`) — use this for plain-text output
+- `Section (name, nodes)` — renders inner nodes if value is truthy; loops over each item if value is a JSON array
+- `InvertedSection (name, nodes)` — renders inner nodes only if value is falsy or absent
+- `Template nodes` — renders all nodes and concatenates results
+- `Partial _` — not yet implemented, returns empty string
+
+**resolve** — walks a dot-separated path (e.g. `person.name`) through nested JSON objects to find a value.
+
+**isTruth** — returns false for `JSON.NULL`, `JSON.BOOL false`, and empty `JSON.ARRAY`. Everything else is truthy.
+
+**jsonToString** — converts a JSON value to a plain string. Objects and arrays return empty string.
+
+**htmlEscape** — escapes `&`, `<`, `>`, `"`, `'` to HTML entities. Applied automatically by `{{name}}`; skipped when using `{{{name}}}`.
+
+---
+
+## Interactive use (SML/NJ REPL)
+
+To explore the renderer interactively without building the standalone binary:
+
+```
+$ sml
+- use "loadrender.sml";
+```
+
+`loadrender.sml` loads all dependencies in order (JSON library, cmlib, Mustache parser, preprocessor, renderer) and runs the test suite. Each test prints `PASS` or `FAIL`, followed by a summary.
+
+SML must be launched from inside `renderer/` so relative paths resolve correctly.
