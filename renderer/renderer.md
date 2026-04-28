@@ -13,6 +13,32 @@ For example, given a JSON file of animals and a Python dataclass template, the r
 
 ---
 
+## Prerequisites
+
+### SML/NJ with the JSON library
+
+The renderer requires `$/json-lib.cm`, which is part of the SML/NJ library. The standard Ubuntu package (`apt install smlnj`) does **not** include this library — you must build SML/NJ from sources.
+
+1. Download the SML/NJ source distribution from [smlnj.org](https://www.smlnj.org/dist/working/).
+2. Follow the build instructions in the distribution's `README`. The key step is running `config/install.sh`, which builds and installs the full library suite including `json-lib`.
+3. Make sure the installed `sml` and `ml-build` binaries are on your `PATH`.
+
+You can verify the JSON library is available by checking that `$/json-lib.cm` is present under your SML/NJ installation's `lib/` directory.
+
+### Generate Mustache parser files
+
+Before building the renderer you must generate two SML source files from the lexer and parser grammar specs. From the `mustache_parser/` directory:
+
+```bash
+cd mustache_parser/
+ml-lex mustache.cmlex        # produces mustache.cmlex.sml
+ml-yacc mustache.cmyacc      # produces mustache.cmyacc.sml
+```
+
+You only need to do this once (or again if you edit `mustache.cmlex` or `mustache.cmyacc`). The generated `.sml` files are what `render.cm` actually compiles.
+
+---
+
 ## How to use it
 
 ### 1. Set CMTOOL_HOME
@@ -39,6 +65,8 @@ cd renderer/
 ```
 
 `build` generates `render.cm` with the correct paths for your machine, then compiles the program using `ml-build`. You will see SML/NJ compiler output ending with something like `[code: ..., data: ..., env: ... bytes]`. This is normal.
+
+**Platform note — heap image suffix.** `ml-build` names the compiled heap image after the current architecture: `render.amd64-darwin` on macOS, `render.amd64-linux` on Linux. The `render` wrapper script needs to match. If you move between machines you may need to update the suffix in the `render` script, or set an `SMLNJ_ARCH` variable in the script so it resolves the correct name automatically (e.g. `SMLNJ_ARCH=$(sml @SMLsuffix 2>/dev/null || echo amd64-darwin)`).
 
 You only need to re-run `./build` if you change any `.sml` source files.
 
