@@ -5,3 +5,7 @@ I should do tests on the Mustache parser.
 TASK 1
 
 Write a draft of the dissertation and upload it until Tuesday noon
+
+Read this page about its expected structure:
+
+https://sites.google.com/sheffield.ac.uk/com-programme-information/programme-information/ug-dissertation-project/dissertation-structure?authuser=0
