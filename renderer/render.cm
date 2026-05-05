@@ -1,14 +1,15 @@
 Group is
   $/basis.cm
   $/json-lib.cm
-  /Users/jayinglew/cmtool/cmlib/streamable.sig
-  /Users/jayinglew/cmtool/cmlib/lex-engine.sig
-  /Users/jayinglew/cmtool/cmlib/lex-engine.sml
-  /Users/jayinglew/cmtool/cmlib/parse-engine.sig
-  /Users/jayinglew/cmtool/cmlib/parse-engine.sml
+  /home/gergelybuday/local/cmtool/cmlib/streamable.sig
+  /home/gergelybuday/local/cmtool/cmlib/lex-engine.sig
+  /home/gergelybuday/local/cmtool/cmlib/lex-engine.sml
+  /home/gergelybuday/local/cmtool/cmlib/parse-engine.sig
+  /home/gergelybuday/local/cmtool/cmlib/parse-engine.sml
   ../mustache_parser/ast.sml
   ../mustache_parser/mustache.cmlex.sml
   ../mustache_parser/mustache.cmyacc.sml
   ../mustache_parser/mustache.sml
+  ../preprocessing/preprocess.sml
   renderer.sml
   main.sml
