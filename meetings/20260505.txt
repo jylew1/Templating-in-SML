@@ -1,0 +1,56 @@
+Dear Ja Ying,
+
+thanks for working this much on your dissertation.
+
+A few remarks:
+
+Front page: is your official degree title Bachelor of Engineering, or is it more
+specific, possibly Biomedical Engineering?
+
+Abstract: please replace the goal of the abstract with a good, informative abstract.
+It should help you in writing the dissertation. If you have a good concept of what
+you are writing about, then it will be clear what to include and what not.
+
+Acknowledgement: this one you can do at the end.
+
+1. Introduction
+
+Templating... this is a very succinct explanation of what templates are. Well done.
+But, please give a reference at the end of the paragraph. And do this similarly for
+other important concepts introduced later on.
+
+The catch is ... please elaborate more on what logic-friendly and logic-less is,
+and give references for them.
+
+BioCaml: please write a paragraph on what it does, it might be interesting for a
+biomedical engineer. Give reference on it, and not just its website but some
+research paper or blog post on it. Also some argumentation why it was good to 
+develop such a library in a functional language. Not by yourself, but quoting
+some references.
+
+2.2 Templating Engines Across Platforms
+
+Good that you write about PHP.
+
+parr2004 in bold: this seems to be a badly formatted reference: end of page 4.
+
+Elm: typo: eisting, it should be existing
+
+tiem should be time
+
+explict should be explicit
+
+Use a spell checker on your LaTeX input, please.
+
+uncertainity -> uncertainty
+
+demsotrtes -> demonstrates
+
+explict again shall be explicit
+
+Quoting Model-View-Controller architecture here I find not adequate: it is about
+graphical user interfaces, but we are talking about templating. There could be a 
+connection, as we are talking about web interfaces, but this shall be explained.
+
+Selecting SML: write a paragraph about the CM Tools, which provide better error 
+messages than ML-Lex and ML-Yacc, with locating the bad input line in the input.
