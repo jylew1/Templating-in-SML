@@ -54,3 +54,66 @@ connection, as we are talking about web interfaces, but this shall be explained.
 
 Selecting SML: write a paragraph about the CM Tools, which provide better error 
 messages than ML-Lex and ML-Yacc, with locating the bad input line in the input.
+With reference to its manual, quoting the statement from there.
+
+Table 2.1 Template System Comparison: where do you refer to this in the literature review,
+section 2? I have not found a reference by searching for "table".
+
+Page 10: Thsi -> This
+
+Page 11: Tthe -> The
+
+Section 3.7 Legal and Ethical Considerations: please remove the URL of your dissertation
+repository from the main text. This should be a proper reference and should appear in the
+bibliography.
+
+Section 4.1. Choice of ...  finish the sentence of the first paragraph on page 17 with a dot.
+ ... is comparatively sparse.
+
+Section 4.2   (A JavaScript fork, say)   this is too informal, not adequate in a dissertation
+use (e.g. a JavaScript fork)
+
+Section 4.4.3 A Worked Example
+
+"After Preprocess.returnArray..." the code example overflows the main text (this is true also above at the beginning of the page), please use a smaller font to limit the code example
+to the width of the main text.
+
+Same on page 21, "Without it, ... #items ... /items", fix this please.
+
+Section 5. Implementation and Testing
+
+again, use the reference of your github repository.
+
+Back to Section 3.4.5 Testing, you mention SML/NJ REPL the first time here.
+Please explain what this abbreviation stands for, and what is it exactly. Remember the 
+non-computer scientist reader.
+
+Page 23, overflowing /usr/local/smlnj/bin/sml, probably it is not even needed here,
+it's enough to write
+
+    to be invoked through its absolute path
+
+what is already there.
+
+Gergely -> my supervisor 
+
+BIDMAS convention: please unfold the abbreviation, explain what it means and give a reference.
+
+Section 5.3: Please do not start a sentence with a programming identifier. Probably:
+
+    The processFields function walks the fields of a JSON object.
+
+or is it an iterator?
+
+Same for flagList and processValue.
+
+On page 25, ditto for resolve, isTruth, htmlEscape and renderNode.
+
+Page 26: overflowing .amd64-linux. Here again, as with the absolute path of the SML/NJ
+compiler, you need not mention the concrete strings, just that these string contain the
+processor architecture and the operating system. Remember, an academic work is about
+concepts, not technologies. Timeless concepts which age less than concrete technologies.
+
+In general, your writing is good, it is good to read. Well done.
+
+
