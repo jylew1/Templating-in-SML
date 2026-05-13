@@ -12,3 +12,9 @@ AI but ask it to give you hard references and double check them and read them.
 Look at ML-ULex and ML-Antlr:
 
 https://www.smlnj.org/doc/ml-lpt/manual.pdf
+
+TASK 2 
+
+Check all your references if they are valid
+
+partly using DBLP: https://dblp.org/
