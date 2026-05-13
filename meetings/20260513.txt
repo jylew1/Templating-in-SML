@@ -1,0 +1,10 @@
+I should review the Introduction and the Abstract.
+
+I should test the Mustache parser.
+
+TASK 1
+
+Please write a section into the literature review about parser generators.
+
+If you do not understand some parsing theory concept you meet, ask your favourite
+AI but ask it to give you hard references and double check them and read them.
