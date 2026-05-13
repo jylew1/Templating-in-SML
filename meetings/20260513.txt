@@ -8,3 +8,7 @@ Please write a section into the literature review about parser generators.
 
 If you do not understand some parsing theory concept you meet, ask your favourite
 AI but ask it to give you hard references and double check them and read them.
+
+Look at ML-ULex and ML-Antlr:
+
+https://www.smlnj.org/doc/ml-lpt/manual.pdf
