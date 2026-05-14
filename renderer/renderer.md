@@ -11,8 +11,6 @@ JSON file  ──►  Preprocessor  ──►  enriched JSON  ──►  Mustach
 
 For example, given a JSON file of animals and a Python dataclass template, the renderer outputs valid Python code — with `None` for null fields, no trailing commas in lists, and optional sections shown or hidden automatically.
 
----
-
 ## Prerequisites
 
 ### SML/NJ with the JSON library
