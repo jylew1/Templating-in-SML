@@ -27,6 +27,9 @@ lex and yacc for C. See this Wikipedia page:
 
 https://en.wikipedia.org/wiki/Comparison_of_parser_generators
 
+Also, write a subsection on hand-written parsers, why they are useful and in what
+circumstances one would write a parser this way.
+
 
 TASK 1
 
