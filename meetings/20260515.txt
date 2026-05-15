@@ -1,3 +1,31 @@
+Review of the Abstract:
+
+standard ML's -> Standard ML's
+
+to utilise Standard ML's properties -> utilise Standard ML's functionality
+
+Do not mention the version number in an abstract. The abstract should be a plain English text without much numbers and punctuation.
+
+The starting sentence of the second paragraph is too technical: the abstract should be a very high level summary.
+
+---
+
+Review of Introduction
+
+The Template and Rendered e-mail Figure is nice and short. Well done.
+
+---
+
+Review of Literature Review:
+
+Generally, it is good.
+
+Parsing theory: read about various formal languages for which parser generators can be written, LALR(1) and so on. Write up a good summary on them.
+
+Parser Generators : this should be an own section, and having not just ML-based parser generators, but in other languages, coming from early 
+lex and yacc for C.
+
+
 TASK 1
 
 Please create automated testing for Mustache parsers. You might use an already existing framework, find one if there exists one.
