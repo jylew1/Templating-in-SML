@@ -59,3 +59,9 @@ TASK 2
 
 Find large mustache templates on the Interet for testing and create an automated
 test framework for them and test your renderer on them.
+
+TASK 3
+
+Write something interesting about Standard ML: signatures, structures and functors
+and how they are used in CM-Lex and CM-Yacc, and lazy streams which is not part of
+the core language.
