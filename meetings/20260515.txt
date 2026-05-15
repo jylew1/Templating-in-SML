@@ -21,6 +21,7 @@ Review of Literature Review:
 Generally, it is good.
 
 Parsing theory: read about various formal languages for which parser generators can be written, LALR(1) and so on. Write up a good summary on them.
+Write about regular languages and lexing, and context free languages and parsers.
 
 Parser Generators : this should be an own section, and having not just ML-based parser generators, but in other languages, coming from early 
 lex and yacc for C. See this Wikipedia page:
