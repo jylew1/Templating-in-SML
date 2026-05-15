@@ -23,7 +23,9 @@ Generally, it is good.
 Parsing theory: read about various formal languages for which parser generators can be written, LALR(1) and so on. Write up a good summary on them.
 
 Parser Generators : this should be an own section, and having not just ML-based parser generators, but in other languages, coming from early 
-lex and yacc for C.
+lex and yacc for C. See this Wikipedia page:
+
+https://en.wikipedia.org/wiki/Comparison_of_parser_generators
 
 
 TASK 1
@@ -48,3 +50,8 @@ but the point is not to translate the Yaml files by hand into SML files
 
 but to read the Yaml files and extract the tests. You need not do this in ML, but
 a student of mine already wrote a Yaml parser in SML, you could use that.
+
+TASK 2
+
+Find large mustache templates on the Interet for testing and create an automated
+test framework for them and test your renderer on them.
