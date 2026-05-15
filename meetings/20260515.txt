@@ -1,0 +1,22 @@
+TASK 1
+
+Please create automated testing for Mustache parsers. You might use an already existing framework, find one if there exists one.
+
+The automated tests are already here:
+
+https://github.com/mustache/spec/blob/master/specs/comments.yml
+
+more Yaml files here:
+
+https://github.com/mustache/spec/tree/master/specs
+
+Your testing framework should read these yaml files and do the tests automatically.
+
+Here you do something similar:
+
+https://github.com/jylew1/Templating-in-SML/blob/main/mustache_parser/tests.sml
+
+but the point is not to translate the Yaml files by hand into SML files
+
+but to read the Yaml files and extract the tests. You need not do this in ML, but
+a student of mine already wrote a Yaml parser in SML, you could use that.
