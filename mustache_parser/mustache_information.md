@@ -47,3 +47,28 @@ to generate mustache.cmyacc.sml
 - a summary is printed at the end, e.g. 21 passed, 0 failed.
 - note: two tests read .mustache files from disk using relative paths,
   so sml must be launched from inside mustache_parser/ or they will fail
+
+# Automated spec tests
+
+An automated test suite lives in `spec_tests/`. It reads test cases from a
+JSON file and runs each one through the full parse-and-render pipeline,
+comparing the output to the expected string.
+
+Test cases are defined in `spec_tests/parser_tests.json`:
+
+    {
+      "name": "simple variable",
+      "template": "Hello {{name}}!",
+      "data": { "name": "World" },
+      "expected": "Hello World!"
+    }
+
+To run all spec tests from the repo root:
+
+    bash spec_tests/run.sh
+
+Each test prints PASS or FAIL. Failures show the expected and actual output
+side by side. A summary is printed at the end.
+
+To add a new test, open `spec_tests/parser_tests.json` and append an entry
+with `name`, `template`, `data`, and `expected` fields.

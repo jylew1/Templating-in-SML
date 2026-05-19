@@ -117,7 +117,7 @@ Minimal example for quick sanity checks when editing the renderer or preprocesso
 
 | File | Purpose |
 |------|---------|
-| `main.sml` | Entry point — reads template and JSON files, runs preprocessor, renders, prints to stdout |
+| `main.sml` | Entry point - reads template and JSON files, runs preprocessor, renders, prints to stdout |
 | `renderer.sml` | Core rendering logic — walks Mustache AST against the JSON context |
 | `build` | Build script — generates `render.cm` using `CMTOOL_HOME` and runs `ml-build` |
 | `render` | Shell script — runs the compiled heap image via `sml @SMLload=` |
@@ -182,15 +182,54 @@ gestation_days: Optional[int] = {{#reproduction.has_gestation_days}}{{reproducti
 
 ---
 
-## Interactive use (SML/NJ REPL)
+## Running the tests
 
-To explore the renderer interactively without building the standalone binary:
+The test file is `tests_renderer.sml`. Run all tests with one command:
 
+```bash
+bash renderer/run_tests.sh
 ```
+
+Or manually from inside the `renderer/` directory:
+
+```bash
 $ sml
 - use "loadrender.sml";
 ```
 
-`loadrender.sml` loads all dependencies in order (JSON library, cmlib, Mustache parser, preprocessor, renderer) and runs the test suite. Each test prints `PASS` or `FAIL`, followed by a summary.
+Each test prints `PASS` or `FAIL`. A summary is printed at the end, e.g. `14 passed, 0 failed`.
+
+The tests cover:
+
+- **Basic rendering** — plain text, simple variable, missing variable, multiple variables
+- **Escaping** — `{{html}}` escapes HTML entities; `{{{html}}}` does not
+- **Comments** — render as empty string
+- **Sections** — truthy renders, falsy hidden, null hidden
+- **Inverted sections** — render when falsy, hidden when truthy
+- **Array loops** — section iterates over each item
+- **Dotted name lookup** — `{{person.name}}` resolves nested objects
 
 SML must be launched from inside `renderer/` so relative paths resolve correctly.
+
+---
+
+## Automated spec tests
+
+An additional test suite in `spec_tests/` runs test cases defined in `spec_tests/parser_tests.json` through the full pipeline and compares rendered output to the expected string.
+
+To run from the repo root:
+
+```bash
+bash spec_tests/run.sh
+```
+
+To add a test, open `spec_tests/parser_tests.json` and append an entry:
+
+```json
+{
+  "name": "my test",
+  "template": "Hello {{name}}!",
+  "data": { "name": "World" },
+  "expected": "Hello World!"
+}
+```

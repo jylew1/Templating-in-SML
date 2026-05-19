@@ -19,9 +19,21 @@ if it is not an array, then it returns it as a how it is
 
 # Running the tests
 
-- have yet to write a formal test file but have performed manual tests
-Preprocess.returnArray (JSON.ARRAY [JSON.STRING "charlie", JSON.STRING "emma", JSON.STRING "henry"]);
-(* expected: each item wrapped with isFirst and isLast, e.g. charlie has isFirst=true, henry has isLast=true *)
+The test file is `tests_preprocess.sml`. Run all tests with one command:
 
-Preprocess.returnArray (JSON.STRING "hello");
-(* expected: JSON.STRING "hello" returned unchanged as it is not an array *)
+    bash preprocessing/run_tests.sh
+
+Or manually from inside the `preprocessing/` directory:
+
+    $ sml
+    - use "/usr/local/smlnj/smlnj-lib/Util/json.sml";
+    - use "preprocess.sml";
+    - use "tests_preprocess.sml";
+
+Each test prints PASS or FAIL. A summary is printed at the end, e.g. `13 passed, 0 failed`.
+
+The tests cover three groups:
+
+- **wrapItem** (4 tests) — wrapping strings and integers with isFirst/isLast combinations
+- **flagList** (4 tests) — empty list, singleton, two items, three items
+- **returnArray** (7 tests) — arrays of one/three/zero items; strings, ints, bools, and null passed through unchanged
