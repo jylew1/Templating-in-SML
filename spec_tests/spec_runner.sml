@@ -51,7 +51,7 @@ struct
             val specName = getStr "spec"  json
             val tests    = getArr "tests" json
             val ()       = print ("\n=== " ^ specName ^ " ===\n")
-            val (p, f)   = List.foldl (runTest specName) (0, 0) tests
+            val (p, f)   = List.foldl (fn (t, acc) => runTest specName acc t) (0, 0) tests
         in
             print ("  " ^ Int.toString p ^ "/" ^ Int.toString (p + f) ^ " passed\n");
             (p, f)
