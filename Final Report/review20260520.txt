@@ -1,0 +1,79 @@
+Dear Ja Ying,
+
+here I review your draft of 20th May 2026.
+
+As always, these are not meants as Hey, I have found a bug!, but Look at this, here is how you can improve your dissertation.
+
+Abstract: please write a sentence or two on why templates are needed in web development.
+
+all passing on Standard ML compiler -> 
+
+I'm not sure if the SML compiler should be emphasized here. Probably:
+
+and renderer. All the unit tests are passed.
+
+---
+
+(future Dr. Buday)
+
+Thanks, I liked this, but you should not get too personal here. Please remove this parenthesesised remark.
+
+truly inspire me -> truly inspired me
+
+Cheng? -> Cheng.
+
+in my life -   -> in my life --- (long dash)
+
+---
+
+1. Introduction
+
+Again, please write a paragraph on why templates are necessary for some languages in web development.
+
+And, look at other solutions to this problem.
+
+Ur/Web uses a domain specific syntax to this problem:
+
+See an example here:
+
+https://frigoeu.github.io/urweb1.html#htmlgen
+
+For a reference on Ur/Web, see
+
+http://www.impredicative.com/ur/
+
+especially the reference manual.
+
+---
+
+Page 14 
+
+Yacc and Bison) -> Yacc and Bison:
+
+Please give references to these parser generators
+
+---
+
+Tree-Sitter: A modern, incremental GLR parser
+
+What is a GLR parser? I have not found this abbreviation
+ before this mention. Please explain it where you explain LALR and give a reference there.
+
+---
+
+Remove the empty Appendix A
+
+---
+
+is that the choice between security and
+usability that Parr (2004)
+
+Did you hand-edited this reference? You should use the 
+\cite command and then Overleaf will generate 
+the correct [number] citation, that should be clickable to guide you to the actual reference.
+
+Please double check if you have other such hand-edited references.
+
+---
+
+Last, but not least: I suggested you to generate automated tests from the Mustache specification Yaml files. I understand that you didn't have time to do this, but it would have really improved your work if you had done this. Probably you can mention this as future work, including a reference to the Yaml parser of Shreyas Desai.
