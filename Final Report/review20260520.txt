@@ -76,4 +76,4 @@ Please double check if you have other such hand-edited references.
 
 ---
 
-Last, but not least: I suggested you to generate automated tests from the Mustache specification Yaml files. I understand that you didn't have time to do this, but it would have really improved your work if you had done this. Probably you can mention this as future work, including a reference to the Yaml parser of Shreyas Desai.
+Thanks that you did the automated tests based on the Mustache specification.
